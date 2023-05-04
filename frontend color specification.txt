@@ -1,0 +1,24 @@
+whole body back color = #3a3531
+
+1]navbar ===
+sec 1 logo back -#fed49a
+sec 2 logo back -#ffc67f
+
+black strip
+color back = #010101
+color words = white
+
+2]product card 
+sec 1 color back = #d8c3b0
+sec 2 color back = #fbecd5
+product name color = #7e7f6c
+price color = #a19f49
+buy now button back color = 
+text inside button color = #d2be9d
+
+3]login/register page 
+feild name color = #897d49,#ebcaa0
+text box color = white ,border radius round
+
+4]login/register Button color back color = #ffd08e
+text inside button color = #fff3dc
