@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import QuantityComp from "./quantityComp";
 import { useSelector,useDispatch } from "react-redux";
 const Wrapper = styled.div``;
 
