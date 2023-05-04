@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.ok {
+    background: linear-gradient(120deg,
+                #ffc67f,
+                #ffc67f 50%,
+                #fed49a 50%,
+                #fed49a);
+    position: fixed;
+    width: 100%;
+    display: flex;
+    height: 5em;
+    z-index: 1;
+}
+.first{
+    width: 30%;
+    display: flex;
+    align-items: start;
+}
+.second{
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nice {
+    letter-spacing:0.01em;
+    color:#2e3718;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.nice:hover{
+    color: white;
+}
+
+.third {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+}
+.nav_btn {
+    border: none;
+    font-size: 1.2em;
+    border-radius: 25px;
+    width: 100%;
+    background-color: #2e3718;
+    height: 2em;
+}
+
+.nav_btn:hover{
+    background-color: white;
+}
+
+.a{
+    color: #bba04c;
+}
+
+.logo {
+    width: 82px;
+    margin-left: 3%;
+    margin-top: 0.5%;
+}
+.menuBar {
+        width: 35px;
+        height: 35px;
+        border: solid;
+}
+.sideMenu {
+    background-color: #1C6758;
+    width: 140px;
+}
+
+.sideMenudiv {
+    height: 100px;
+    border-top: solid 1px;
+    border-bottom: solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sideNav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 200px;
+}
+
+@media (max-width : 819px) {
+    .first {
+        width: 30%;
+    }
+
+    .nice {
+        display: none;
+    }
+
+    .nav_btn {
+        display: none;
+    }
+
+    .second {
+        flex: 1;
+    }
+
+    .third {
+        display: none;
+    }
+}
+
+@media (min-width : 819px) {
+    .menuBar {
+        display: none;
+    }
+}
+
+.iconContainer{
+    color: white;
+}
+.icon{
+                width: 30px;
+                border:solid 2px;
+                border-radius: 2px;
+}

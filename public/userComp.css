@@ -1,0 +1,10 @@
+.flexContainer{
+    border: solid;
+    height: 1000px;
+    width: 150px;
+    margin-top: 65px;
+    display: flex;
+    background-color: red;
+    flex-direction: column;
+    position: absolute;
+}

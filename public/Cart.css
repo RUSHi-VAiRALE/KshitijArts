@@ -1,0 +1,20 @@
+.cartwrapper{
+    width: 50%;
+    display: flex;
+}
+
+.CartmainProduct{
+    width: 180px;
+    height: 180px;
+}
+.Cartmain1 {
+    margin-top: 1%;
+}
+.Cartmain2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3%;
+}
+.btn-remove {
+    margin-top: 0%;
+}

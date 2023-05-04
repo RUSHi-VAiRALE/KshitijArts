@@ -1,0 +1,108 @@
+
+.swrapper {
+    display: flex;
+    padding-top: 4%;
+    padding-bottom: 2%;
+    padding-top: 80px;
+    text-decoration: none;
+    justify-content: space-around;
+}
+
+.mainProduct {
+    margin-left: 1%;
+    margin-top: 1%;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+.mainProduct:hover {
+    opacity: 0.8;
+}
+
+.main1 {
+    width: 50%;
+    display: flex;
+}
+.sideImg {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    margin: 1.5%;
+}
+.sideImg:hover{
+    opacity: 0.8;
+}
+
+.smallImg {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin-left: 1px;
+    margin-top: 1%;
+}
+
+@media (max-width : 820px) {
+    .smallImg {
+        flex-direction: row;
+        justify-self: space-evenly;
+    }
+    .sideImg {
+        width: 60px;
+        height: 60px;
+    }
+    .main1 {
+        flex-direction: column-reverse;
+    }
+}
+@media (max-width : 416px) {
+    .sideImg {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.mainImg {
+    display: flex;
+    flex-direction: column;
+}
+
+.main2 {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    flex-direction: column;
+}
+
+.productName {
+    font-weight: lighter;
+    font-size: 2rem;
+    margin-bottom: 2%;
+    margin-left: 2%;
+}
+
+.productDisc{
+    margin-left: 2%;
+}
+
+.productPrice {
+    padding-top: 2%;
+    font-weight: lighter;
+    margin-left: 2%;
+}
+.btn-single {
+
+}
+@media (max-width : 660px){
+    .btn-single {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width : 391px) {
+    .btns {
+        font-size: 0.5em;
+        width: 90px;
+        height: 40px;
+    }
+}

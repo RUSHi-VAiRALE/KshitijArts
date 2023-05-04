@@ -1,0 +1,23 @@
+.quantityWrap {
+    width: 5vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.quantCount {
+    display: flex;
+    font-size: large;
+    justify-content: center;
+}
+
+.decButton {
+    border: none;
+    font-size: large;
+    background-color: transparent;
+}
+
+.incButton {
+    border: none;
+    font-size: large;
+    background-color: transparent;
+}
