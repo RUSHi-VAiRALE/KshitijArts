@@ -1,6 +1,5 @@
 import axios from "axios";
 import React, { useState,useEffect } from "react";
-import Contacts from "../products";
 import Card from "./Card";
 
 const createCard=(contact) => {

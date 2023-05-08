@@ -16,16 +16,16 @@ const P = styled.p``
 
 const H3 = styled.h3``
 
-const CreateCart=(sProduct,CartId1)=>{
-
-    console.log(CartId1)
+const CreateCart=(sProduct)=>{
+    
     const handleClick=(sPro)=>{
-        try {
-            axios
-        .get("http://localhost:8000/userCart/deleteCart/"+CartId1.cartid+"/"+sPro._id,{headers:{authorization: "Bearer "+CartId1.accessToken}});
-        } catch (error) {
-            console.log(error)
-    }
+        console.log("remove");
+    //     try {
+    //         axios
+    //     .get("http://localhost:8000/userCart/deleteCart/"+CartId1.cartid+"/"+sPro._id,{headers:{authorization: "Bearer "+CartId1.accessToken}});
+    //     } catch (error) {
+    //         console.log(error)
+    // }
 }
     return(
         <Wrapper className="cartwrapper">
@@ -50,11 +50,10 @@ const CreateCart=(sProduct,CartId1)=>{
 }
 
 const Cartcomp = () => {
-
+    console.log("cart called");
     const [products,setProducts] = useState([])
     const CartId = useSelector((state)=>state.user.currentUser)
     useEffect(()=>{
-    const GetProduct=async ()=>{
         try {
             axios
         .get("http://localhost:8000/userCart/allCart/"+CartId.cartid,{headers:{authorization: "Bearer "+CartId.accessToken}})
@@ -64,15 +63,11 @@ const Cartcomp = () => {
         } catch (error) {
             console.log(error)
         }
-    }
-    GetProduct();
 },[CartId.cartid])
 
     return (
         <Div>
-                {products.map((product)=>(
-                CreateCart(product,CartId)
-            ))}
+                {products.map(CreateCart)}
         </Div>
 
     );
