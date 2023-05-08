@@ -37,6 +37,7 @@ const SingleProductComp =()=>{
     let proId=loc.pathname.split("/")[2];
     const [single,setObject] = useState({});
     const [img,setImg] = useState();
+    const token = useSelector((state)=>state.user.currentUser);
 
 useEffect(()=>{
     const GetProduct=async ()=>{
@@ -55,6 +56,11 @@ useEffect(()=>{
 
     const handleClick=()=>{
         if (userCheck!=="") {
+            try {
+                axios.post("http://localhost:8000/userCart/updateCart/"+token.cartid,single,{headers:{authorization: "Bearer "+token.accessToken}})
+            } catch (error) {
+                console.log(error)
+            }
             dispatch(addProduct({single,quantity}))
         } else {
             alert("Please login first!")

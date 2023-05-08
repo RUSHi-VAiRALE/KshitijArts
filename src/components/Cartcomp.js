@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState,useEffect } from "react";
 import styled from "styled-components";
+import axios from "axios";
 import { useSelector,useDispatch } from "react-redux";
 const Wrapper = styled.div``;
 
@@ -15,9 +16,17 @@ const P = styled.p``
 
 const H3 = styled.h3``
 
-const createCart=(sProduct)=>{
+const CreateCart=(sProduct,CartId1)=>{
 
-
+    console.log(CartId1)
+    const handleClick=(sPro)=>{
+        try {
+            axios
+        .get("http://localhost:8000/userCart/deleteCart/"+CartId1.cartid+"/"+sPro._id,{headers:{authorization: "Bearer "+CartId1.accessToken}});
+        } catch (error) {
+            console.log(error)
+    }
+}
     return(
         <Wrapper className="cartwrapper">
                 
@@ -29,11 +38,11 @@ const createCart=(sProduct)=>{
 
                         <Div className="Cartmain2">
                             <H2 className="productName">
-                                {sProduct.name}
+                                {sProduct.proName}
                             </H2>
-                            <P className="productDisc">{sProduct.discription}</P>
+                            <P className="productDisc">{sProduct.proDisc}</P>
                             <H3 className="productPrice">{sProduct.price}</H3>
-                            <Button className="btn btn-remove">Remove</Button>
+                            <Button onClick={handleClick(sProduct)} className="btn btn-remove">Remove</Button>
                         </Div>
                     
             </Wrapper>
@@ -42,12 +51,27 @@ const createCart=(sProduct)=>{
 
 const Cartcomp = () => {
 
-    const cart = useSelector((state)=>state.cart)
+    const [products,setProducts] = useState([])
+    const CartId = useSelector((state)=>state.user.currentUser)
+    useEffect(()=>{
+    const GetProduct=async ()=>{
+        try {
+            axios
+        .get("http://localhost:8000/userCart/allCart/"+CartId.cartid,{headers:{authorization: "Bearer "+CartId.accessToken}})
+        .then((res)=>
+            setProducts(res.data)
+        );
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    GetProduct();
+},[CartId.cartid])
 
     return (
         <Div>
-                {cart.products.map((product)=>(
-                createCart(product)
+                {products.map((product)=>(
+                CreateCart(product,CartId)
             ))}
         </Div>
 

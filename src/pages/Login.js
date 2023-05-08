@@ -7,6 +7,8 @@ import Footer from "../components/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { loginFailure, loginStart, loginSuccess } from "../redux/userLogin";
 import { useNavigate } from "react-router-dom";
+import {login} from "../redux/apiCalls";
+
 
 const Container = styled.div`
     width : 100vw;
@@ -56,10 +58,9 @@ const Button = styled.button`
 const Login = () => {
 
     const [inputs, setInputs] = useState({});
-    const user = useSelector((state)=>state.user);
     const dispatch = useDispatch();
     const navigate = useNavigate()
-
+    const token = useSelector((state)=>state.user);
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -69,17 +70,17 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(loginStart());
-    try {
-        axios
-        .post("http://localhost:8000/user/auth/login",inputs)
-        .then((res)=>
-            dispatch(loginSuccess(res.data)))
+    login(dispatch,inputs);
+    // dispatch(loginStart());
+    // try {
+    //     axios
+    //     .post("http://localhost:8000/user/auth/login",inputs)
+    //     .then((res)=>
+    //         dispatch(loginSuccess(res.data)))
         
-    } catch (error) {
-        dispatch(loginFailure());
-    }
-    
+    // } catch (error) {
+    //     dispatch(loginFailure());
+    // }
     navigate("/");
   }
     return(
