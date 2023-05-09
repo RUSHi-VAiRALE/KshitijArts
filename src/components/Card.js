@@ -16,7 +16,6 @@ const Paragraph = styled.div``
 
 const Card=(props)=>{
 
-
     return (
             <div style={{
                 height:"450px",

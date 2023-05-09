@@ -77,7 +77,16 @@ const Navbar = () => {
                     alignItems:"center"
                     }}>
                     <div className="iconContainer">
-                        <Link to="/cart">
+                        {
+                            (user!=="")? <Link to="/cart">
+                        <img
+                        style={{
+                            width:"40px"
+                        }}
+                        typeof="button" 
+                        src={cartComp}/>
+                        </Link> : 
+                        <Link to="/login">
                         <img
                         style={{
                             width:"40px"
@@ -85,6 +94,7 @@ const Navbar = () => {
                         typeof="button" 
                         src={cartComp}/>
                         </Link>
+                        }
                         {createDiv()}
                     </div>
                 </div>
