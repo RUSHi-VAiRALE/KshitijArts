@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-import SingleProduct from "../components/SingleProduct";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../redux/userCart";
-import Single from "../newSingle"
-import ProductList from "../components/ProductList";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 

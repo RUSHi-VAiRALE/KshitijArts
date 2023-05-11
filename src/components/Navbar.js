@@ -4,7 +4,6 @@ import menuBar from "../icons/bars-solid.svg";
 import cartComp from "../icons/cart-shopping-solid (2).svg"
 import userIcon from "../icons/user-solid.svg"
 import { useSelector } from "react-redux";
-import { hover } from "@testing-library/user-event/dist/hover";
 import Logo from "./Ellipse 1 (3).png"
 
 const Navbar = () => {
