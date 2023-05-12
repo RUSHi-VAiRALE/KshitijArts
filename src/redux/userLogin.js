@@ -4,7 +4,7 @@ export const userSlice = createSlice({
     name : "user",
     initialState:{
         userName : "",
-        currentUser : {},
+        currentUser :{},
         isFetching : false,
         isError : false
     },
@@ -15,12 +15,17 @@ export const userSlice = createSlice({
         loginSuccess:(state,action)=>{
             state.currentUser=action.payload
             state.userName = action.payload.firstName
+            state.isFetching = false
         },
         loginFailure:(state)=>{
             state.isError = true
+        },
+        logout:(state)=>{
+            state.userName=""
+            state.currentUser={}
         }
     },
 });
 
-export const {loginStart,loginSuccess,loginFailure} =userSlice.actions;
+export const {loginStart,loginSuccess,loginFailure,logout} =userSlice.actions;
 export default userSlice.reducer

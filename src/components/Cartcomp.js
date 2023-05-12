@@ -20,7 +20,7 @@ const H3 = styled.h3``
 
 const createCart=(contact)=>{
     return(
-        <CartCard
+        <CartCard 
             key = {contact._id}
             ID = {contact._id}
             name = {contact.proName}

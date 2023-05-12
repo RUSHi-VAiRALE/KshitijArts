@@ -1,14 +1,22 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import menuBar from "../icons/bars-solid.svg";
 import cartComp from "../icons/cart-shopping-solid (2).svg"
 import userIcon from "../icons/user-solid.svg"
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import Logo from "./Ellipse 1 (3).png"
+import {logout} from "../redux/userLogin"
 
 const Navbar = () => {
     const quantity = useSelector((state)=>state.cart.quantity);
     const user = useSelector((state)=>state.user.userName)
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleLogout=()=>{
+        dispatch(logout())
+        navigate("/")
+    }
 
     const checkConditionally=()=>{
         if(user!==""){
@@ -23,6 +31,7 @@ const Navbar = () => {
                         marginLeft:"10px",
                         color:"#2e3718"
                     }}>Hello,{user}</p>
+                    <button onClick={handleLogout} className="nav_btn">Logout</button>
                 </div>
             )
         }

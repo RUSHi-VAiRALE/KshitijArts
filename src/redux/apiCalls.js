@@ -10,6 +10,6 @@ export const login= async (dispatch,user)=>{
         .then((res)=>
             dispatch(loginSuccess(res.data))) 
     } catch (error) {
-        dispatch(loginFailure);
+        dispatch(loginFailure());
     }
 }

@@ -24,13 +24,14 @@ const CartCard=(props)=>{
 
     const cartId = useSelector((state)=>state.user.currentUser)
 
-    const handleClick=()=>{
+    const handleClick=(e)=>{
         try {
             axios
         .delete("http://localhost:8000/userCart/deleteCart/"+cartId.cartid+"/"+props.ID,{headers:{authorization: "Bearer "+cartId.accessToken}});
         } catch (error) {
             console.log(error)
     }
+    window.location.reload(true)
 }
 
     return(
