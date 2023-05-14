@@ -17,10 +17,7 @@ const Paragraph = styled.div``
 const Card=(props)=>{
 
     return (
-            <div style={{
-                height:"450px",
-                marginTop:"2%"
-            }}>
+            <div className="proBox">
                 <Wrapper className="wrapper">
                 <Link style={{textDecoration:"None"}} to={"/sp/"+props.ID}>
                 <Img  className="circle-img" src={props.img}/>
@@ -29,6 +26,9 @@ const Card=(props)=>{
                 <div className="secDiv">
                     <div className="name">
                         {props.name}
+                    </div>
+                    <div className="price">
+                        {props.price}
                     </div>
                     <div>
                         <Button

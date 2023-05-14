@@ -39,7 +39,7 @@ const CartCard=(props)=>{
                 
                     <Div className="Cartmain1">
                             <Div className="imgcont">
-                                <Img className="CartmainProduct" src={props.imgURL} />
+                                <Img className="CartmainProduct" src={props.img} />
                             </Div>
                     </Div>
 
@@ -48,7 +48,7 @@ const CartCard=(props)=>{
                                 {props.name}
                             </H2>
                             <P className="productDisc">{props.disc}</P>
-                            <H3 className="productPrice">{props.price}</H3>
+                            <H3 className="price">{props.price}</H3>
                             <Button onClick={handleClick} className="btn btn-remove">Remove</Button>
                         </Div>
                     

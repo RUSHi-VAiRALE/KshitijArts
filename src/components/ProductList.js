@@ -9,6 +9,7 @@ const createCard=(contact) => {
             ID = {contact._id}
             name = {contact.name}
             img = {contact.imgURL}
+            price = {contact.price}
             tel = {contact.phone}
             email = {contact.email}
         />

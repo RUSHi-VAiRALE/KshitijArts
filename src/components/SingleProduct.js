@@ -92,7 +92,7 @@ return(
                         {single.name}
                     </Div>
                     <Div className="productDisc">{single.discription}</Div>
-                    <Div className="productPrice">{single.email}</Div>
+                    <Div className="price">{single.price}</Div>
                     <Div className="btn-single btn-container">
                             <Button className="btn btns">Buy Now</Button>
                             <Button 

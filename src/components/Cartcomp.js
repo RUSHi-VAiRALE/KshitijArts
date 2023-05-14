@@ -25,6 +25,8 @@ const createCart=(contact)=>{
             ID = {contact._id}
             name = {contact.proName}
             disc = {contact.proDisc}
+            img = {contact.proURL}
+            price = {contact.proPrice}
         />
     );
 }
