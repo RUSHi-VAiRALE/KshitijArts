@@ -1,3 +1,4 @@
+import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -16,6 +17,18 @@ const Paragraph = styled.div``
 
 const Card=(props)=>{
 
+    const handlePayment=(amount)=>{
+       const _data = {amount:amount}
+        try {
+            axios.post("http://localhost:8000/payment/orders",_data)
+        .then(res=>{
+            console.log(res.data)
+        })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
             <div className="proBox">
                 <Wrapper className="wrapper">
@@ -31,7 +44,7 @@ const Card=(props)=>{
                         {props.price}
                     </div>
                     <div>
-                        <Button
+                        <Button onClick={()=>handlePayment(props.price)}
                         className="btn">Buy Now</Button>
                     </div>
                 </div>
