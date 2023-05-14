@@ -23,15 +23,21 @@ const Navbar = () => {
             return(
                 <div style={{
                     display:"flex",
-                    alignItems:"center"
+                    alignItems:"center",
+                    flexDirection:"column"
                 }}>
-                    <img className="icon" src={userIcon} />
+                    <div style={{
+                        display:"flex",
+                        marginBottom:"2px"
+                    }}>
+                        <img className="icon" src={userIcon} />
                     <p style={{
                         fontSize:"1.4em",
                         marginLeft:"10px",
                         color:"#2e3718"
                     }}>Hello,{user}</p>
-                    <button onClick={handleLogout} className="nav_btn">Logout</button>
+                    </div>
+                    <button onClick={handleLogout} className="logout_btn">Logout</button>
                 </div>
             )
         }
@@ -110,7 +116,7 @@ const Navbar = () => {
                 style=
                 {
                     {
-                        width:"50%"
+                        width:"50%",
                     }
                 }>
                     {checkConditionally()}
