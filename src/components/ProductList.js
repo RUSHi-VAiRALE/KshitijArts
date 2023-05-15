@@ -22,9 +22,9 @@ const ProductList = () => {
     useEffect(()=>{
         axios
             .get("http://localhost:8000/product/allProducts")
-            .then((res)=>
+            .then(res=>{
                 setArray(res.data)
-            );
+    });
     },[]);
     return (
         <div className="container">
