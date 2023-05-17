@@ -12,7 +12,9 @@ const QuantityComp = () => {
     
     const [currentState, setState] = useState(1)
 
-
+    const no = () =>{
+        
+    }
     const increase = () =>{
         setState(currentState + 1);
     }
@@ -23,7 +25,7 @@ const QuantityComp = () => {
 
     return (
         <Wrapper className="quantityWrap">
-            <Button onClick={currentState===1 ? NaN : decrease } className="decButton">-</Button>
+            <Button onClick={currentState===1 ?no: decrease } className="decButton">-</Button>
             <Para className="quantCount"><Para>{currentState}</Para></Para>
             <Button onClick={increase} className="incButton">+</Button>
         </Wrapper>

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../redux/userCart";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Quantity from "./quantityComp"
 
 
 const Container = styled.div``
@@ -93,6 +94,7 @@ return(
                     </Div>
                     <Div className="productDisc">{single.discription}</Div>
                     <Div className="price">{single.price}</Div>
+                    <Div><Quantity/></Div>
                     <Div className="btn-single btn-container">
                             <Button className="btn btns">Buy Now</Button>
                             <Button 

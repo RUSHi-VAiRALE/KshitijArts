@@ -19,7 +19,6 @@ const Paragraph = styled.div``
 const Card=(props)=>{
 
     const user = useSelector((state)=>state.user.userName);
-    console.log(user)
     const navigate = useNavigate();
 
     const handleOpenRazorpay = (data) =>{
