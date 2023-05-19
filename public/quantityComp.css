@@ -5,9 +5,13 @@
 }
 
 .quantCount {
+    width: 22px;
     display: flex;
     font-size: large;
     justify-content: center;
+    border:solid;
+    border-width: 1px;
+    border-radius: 50%;
 }
 
 .decButton {

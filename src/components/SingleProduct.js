@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../redux/userCart";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Quantity from "./quantityComp"
+import styled from "styled-components";
 
 
 const Container = styled.div``
@@ -19,12 +18,13 @@ const Button = styled.button``
 
 const H2 = styled.h2``
 
-const P = styled.p``
-
 const H3 = styled.h3``
+
+const Para = styled.p``
 
 
 const SingleProductComp =()=>{
+    const user = useSelector((state)=>state.user.userName);
     const dispatch = useDispatch();
     const userCheck = useSelector((state)=>state.user.userName)
     const navigate = useNavigate();
@@ -32,8 +32,63 @@ const SingleProductComp =()=>{
     const loc = useLocation();
     let proId=loc.pathname.split("/")[2];
     const [single,setObject] = useState({});
-    const [img,setImg] = useState();
     const token = useSelector((state)=>state.user.currentUser);
+
+    const [currentState, setState] = useState(1)
+
+    const no = () =>{
+        
+    }
+    const increase = () =>{
+        setState(currentState + 1);
+    }
+
+    const decrease = () => {
+        setState(currentState - 1);
+    }
+
+    const handleOpenRazorpay = (data) =>{
+        const options = {
+            key : 'rzp_test_W1CfhGkA90XLGW',
+            amount : data.amount,
+            currency : data.currency,
+            name : "KshitijArts",
+            discription : 'xyz',
+            order_id : data.id,
+            handler : function (response) {
+                console.log(response)
+                axios.post("http://localhost:8000/payment/verify",{response:response})
+                .then(res=>{
+                    console.log(res)
+                })
+                .catch(err=>{
+                    console.log(err)
+                })
+            }
+        }
+        const rzp = new window.Razorpay(options)
+        rzp.open();
+    }
+
+    const handlePayment=(amount,cuState)=>{
+        if (user!=="") {
+            const _data = {amount:amount,
+                            quantity:cuState}
+        try {
+            axios.post("http://localhost:8000/payment/orders",_data)
+        .then(res=>{
+            console.log(res.data)
+            handleOpenRazorpay(res.data);
+        })
+        } catch (error) {
+            console.log(error)
+        }
+        } else {
+            alert("Please login first")
+            navigate("/login")
+        }
+    }
+
 
 useEffect(()=>{
     const GetProduct=async ()=>{
@@ -94,9 +149,13 @@ return(
                     </Div>
                     <Div className="productDisc">{single.discription}</Div>
                     <Div className="price">{single.price}</Div>
-                    <Div><Quantity/></Div>
+                    <Div><Wrapper className="quantityWrap">
+            <Button onClick={currentState===1 ?no: decrease } className="decButton">-</Button>
+            <Para className="quantCount"><Para>{currentState}</Para></Para>
+            <Button onClick={increase} className="incButton">+</Button>
+        </Wrapper></Div>
                     <Div className="btn-single btn-container">
-                            <Button className="btn btns">Buy Now</Button>
+                            <Button onClick={()=>handlePayment(single.price,currentState)} className="btn btns">Buy Now</Button>
                             <Button 
                             onClick={handleClick}
                             className="cart-btn btn btns">Add to Cart</Button>
