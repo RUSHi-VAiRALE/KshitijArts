@@ -57,7 +57,13 @@ const SingleProductComp =()=>{
             order_id : data.id,
             handler : function (response) {
                 console.log(response)
-                axios.post("http://localhost:8000/payment/verify",{response:response})
+                const proInfo = {
+                    pId : single._id,
+                    pImg  : single.imgURL,
+                    pName : single.name,
+                    pPrice: (data.amount/100)
+                }
+                axios.post("http://localhost:8000/payment/verify/"+token.cartid,{response:response,proInfo})
                 .then(res=>{
                     console.log(res)
                 })

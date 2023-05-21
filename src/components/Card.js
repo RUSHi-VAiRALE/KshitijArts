@@ -19,6 +19,7 @@ const Paragraph = styled.div``
 const Card=(props)=>{
 
     const user = useSelector((state)=>state.user.userName);
+    const cartId = useSelector((state)=>state.user.currentUser);
     const navigate = useNavigate();
 
     const handleOpenRazorpay = (data) =>{
@@ -31,7 +32,13 @@ const Card=(props)=>{
             order_id : data.id,
             handler : function (response) {
                 console.log(response)
-                axios.post("http://localhost:8000/payment/verify",{response:response})
+                const proInfo = {
+                    pId : props.ID,
+                    pImg  : props.img,
+                    pName : props.name,
+                    pPrice: (data.amount/100)
+                }
+                axios.post("http://localhost:8000/payment/verify/"+cartId.cartid,{response:response,proInfo})
                 .then(res=>{
                     console.log(res)
                 })
@@ -46,7 +53,8 @@ const Card=(props)=>{
 
     const handlePayment=(amount)=>{
         if (user!=="") {
-            const _data = {amount:amount}
+            const _data = {amount:amount,
+                            quantity:1}
         try {
             axios.post("http://localhost:8000/payment/orders",_data)
         .then(res=>{
