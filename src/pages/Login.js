@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { useState } from "react";
-import axios from "axios";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useDispatch, useSelector } from "react-redux";
-import { loginFailure, loginStart, loginSuccess } from "../redux/userLogin";
 import { useNavigate } from "react-router-dom";
 import {login} from "../redux/apiCalls";
 
