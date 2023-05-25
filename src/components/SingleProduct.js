@@ -138,7 +138,7 @@ return(
                 <Div className="main1">
                     <Div className="smallImg">
                         <Img id="1" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg" src={single.img1URL} />
-                        <Img id="2" onMouseEnter={handleClick1} onMouseOut={handleClick1}className="sideImg" src={single.img2URL} />
+                        <Img id="2" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg" src={single.img2URL} />
                         <Img id="3" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg" src={single.img3URL} />
                         <Img id="4" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg" src={single.img4URL} />
                         <Img id="5" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg" src={single.img5URL} />

@@ -2,6 +2,7 @@
     width: 5vw;
     display: flex;
     justify-content: space-between;
+    margin-left: 2%;
 }
 
 .quantCount {
@@ -10,8 +11,7 @@
     font-size: large;
     justify-content: center;
     border:solid;
-    border-width: 1px;
-    border-radius: 50%;
+    border: none;
 }
 
 .decButton {
