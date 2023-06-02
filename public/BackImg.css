@@ -6,3 +6,60 @@
     filter: blur(4px);
     z-index: 0;
 }
+
+.onimgdiv2{
+    border: none;
+    width:50%;
+    height:660px;
+    position:absolute;
+    bottom:-1px;
+    left:750px;
+}
+.onimgdiv2:hover{
+    border: solid;
+    border-color: white;
+}
+
+.onimgdiv1{
+    border: none;
+    width:50%;
+    height:660px;
+    position:absolute;
+    bottom:-1px;
+}
+.onimgdiv1:hover {
+    border: solid;
+    border-color: white;
+}
+
+.imgdiv1{
+    border: solid;
+    border-color:white;
+    border-width:5px;
+    width:310px;
+    height:310px;
+    position:absolute;
+    top:4px;
+    left:65px;
+}
+
+.imgdiv2{
+    border: solid;
+    border-color:white;
+    border-width: 5px;
+    width: 310px;
+    height: 310px;
+    position: absolute;
+    top:322px;
+    left:384px
+}
+
+.imgPainting{
+    width: 310px;
+    height:310px;
+}
+
+.imgPottery{
+    width: 310px;
+    height:310px;
+}

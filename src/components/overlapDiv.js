@@ -11,7 +11,7 @@ const OverlapDiv=()=>{
             position:"relative",
             top:"50%",
             borderRadius:"60px",
-            top:"-10px",
+            top:"-1px",
             paddingTop:"0.5%"
         }}>
         <Separtor/>
