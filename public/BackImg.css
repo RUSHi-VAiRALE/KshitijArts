@@ -58,6 +58,10 @@
     width: 310px;
     height:310px;
 }
+.imgPainting:hover{
+    width: 330px;
+    height: 330px;
+}
 
 .imgPottery{
     width: 310px;
