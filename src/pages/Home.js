@@ -9,7 +9,6 @@ const Home = () => {
     return (<div>
         <Navbar />
         <BackImg />
-        <OverlapDiv />
         <ProductList />
         <Footer />
     </div>)

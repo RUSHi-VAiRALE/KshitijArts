@@ -3,29 +3,22 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    
 }
 
 
 .ok {
-    background: linear-gradient(120deg,
-                #ffc67f,
-                #ffc67f 50%,
-                #fed49a 50%,
-                #fed49a);
+    background: #F7F7F7;
     position: fixed;
     width: 100%;
     display: flex;
-    height: 5em;
+    height: 101px;
     z-index: 1;
 }
 .first{
     width: 30%;
     display: flex;
-    align-items: start;
+    align-items: center;
 }
 .second{
     flex: 1;
@@ -48,30 +41,39 @@ body {
 .third {
     width: 30%;
     display: flex;
-    justify-content: space-around;
-    align-items:center
+    margin-left: 8%;
+    margin-top: 10px;
 }
 .nav_btn {
-    border: none;
-    font-size: 1.2em;
-    border-radius: 25px;
-    width: 100%;
-    background-color: #2e3718;
-    height: 2em;
+    width: 123px;
+    height: 46px;
+    background: #8B3DFF;
+    border: 1px solid #A0A0A0;
 }
 
-.nav_btn:hover{
+/* .nav_btn:hover{
     background-color: white;
-}
+} */
 
-.a{
-    color: #bba04c;
-}
-
-.logo {
-    width: 82px;
-    margin-left: 3%;
-    margin-top: 0.5%;
+.logoName {
+    position: absolute;
+        left: 9.24%;
+        right: 63.62%;
+        top: 36.64%;
+        bottom: 41.04%;
+    
+        font-family: 'Palanquin Dark';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 48px;
+        line-height: 25px;
+        /* or 52% */
+    
+        letter-spacing: -0.055em;
+    
+        /* Black */
+    
+        color: #000000;
 }
 .menuBar {
         width: 35px;
@@ -128,7 +130,11 @@ body {
 }
 
 .iconContainer{
-    color: white;
+    width: 123px;
+    height: 46px;
+    background: #8B3DFF;
+    border: 1px solid #A0A0A0;
+    margin-right: 8px;
 }
 .icon{
                 width: 20px;
@@ -136,11 +142,23 @@ body {
                 border-radius: 2px;
 }
 .logout_btn{
-        border: none;
-        font-size: 1.1em;
-        border-radius: 25px;
-        background-color: #2e3718;
-        height: 2em;
-        width: 70%;
-        color: #fed49a;
+        width: 100%;
+            height: 2em;
+            background: #8B3DFF;
+            border: 1px solid #A0A0A0;
+            font-family: 'Mulish';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
+            line-height: 25px;
+            color: #000000;
+}
+.btnName{
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+    color: #000000;
+    display: inline-block;
 }

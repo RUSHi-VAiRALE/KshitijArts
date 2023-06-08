@@ -37,13 +37,13 @@ const Navbar = () => {
                         color:"#2e3718"
                     }}>Hello,{user}</p>
                     </div>
-                    <button onClick={handleLogout} className="logout_btn">Logout</button>
+                    <button onClick={handleLogout} className="logout_btn"><p className="btnName">Logout</p></button>
                 </div>
             )
         }
         else{
             return(
-                <button className="nav_btn"><a style={{textDecoration:"none"}} href="/login" className="a">Login/Register</a></button>
+                <button className="nav_btn"><a style={{textDecoration:"none"}} href="/login" className="a"><p className="btnName">Sign in</p></a></button>
             )
         }
     }
@@ -75,8 +75,7 @@ const Navbar = () => {
     return (
     <div className="ok">
         <div className="first">
-            <img typeof="button" className="menuBar" src={menuBar} />
-            <img className="logo" src={Logo}/>
+            <p className="logoName">Kshitij.World</p>
         </div>
         <div className="second">
             <div ><a href="/" className="nice">Home</a></div>
@@ -86,16 +85,14 @@ const Navbar = () => {
         </div>
         
         <div className="third">
-                <div style={{
-                    display:"flex",
-                    alignItems:"center"
-                    }}>
-                    <div className="iconContainer">
+                <button className="iconContainer">
+                    <p className="btnName">items  <div>
                         {
                             (user!=="")? <Link to="/cart">
                         <img
                         style={{
-                            width:"40px"
+                            width:"20px",
+                            border:"solid"
                         }}
                         typeof="button" 
                         src={cartComp}/>
@@ -103,20 +100,20 @@ const Navbar = () => {
                         <Link to="/login">
                         <img
                         style={{
-                            width:"40px"
+                            width:"20px"
                         }}
                         typeof="button" 
                         src={cartComp}/>
                         </Link>
                         }
                         {createDiv()}
-                    </div>
-                </div>
+                    </div></p>
+                </button>
                 <div 
                 style=
                 {
                     {
-                        width:"50%",
+                        width:"30%",
                     }
                 }>
                     {checkConditionally()}

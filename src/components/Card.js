@@ -76,19 +76,13 @@ const Card=(props)=>{
                 <Link style={{textDecoration:"None"}} to={"/sp/"+props.ID}>
                 <Img  className="circle-img" src={props.img}/>
                 </Link>
-                </Wrapper>
-                <div className="secDiv">
-                    <div className="name">
+                <div className="name">
                         {props.name}
                     </div>
                     <div className="price">
                         {props.price}
                     </div>
-                    <div>
-                        <Button onClick={()=>handlePayment(props.price)}
-                        className="btn">Buy Now</Button>
-                    </div>
-                </div>
+                </Wrapper>
             </div>
     );
 }
