@@ -20,7 +20,7 @@
     /* margin: 10% 20px 0; */
 }
 
-.price{
+.priceinlist{
     font-family: 'Ovo';
         font-style: normal;
         font-weight: 400;
@@ -67,9 +67,6 @@
     border: solid;
 } */
 
-.btn-container {
-    display: flex;
-}
 
 .btn {
     font-weight: bolder;

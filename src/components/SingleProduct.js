@@ -135,36 +135,38 @@ useEffect(()=>{
 return(
         <div>
             <Wrapper className="swrapper">
-                <Div className="main1">
-                    <Div className="smallImg">
+                    <Div className="main1">
                         <Img id="1" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg" src={single.img1URL} />
                         <Img id="2" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg" src={single.img2URL} />
                         <Img id="3" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg" src={single.img3URL} />
                         <Img id="4" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg" src={single.img4URL} />
                         <Img id="5" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg" src={single.img5URL} />
                     </Div>
+                <Div className="main2">
                     <Div className="mainImg">
                         <Div>
                             <Img className="mainProduct" src={single.imgURL} />
                         </Div>
                     </Div>
                 </Div>
-                <Div className="main2">
-                    <Div className="productName">
-                        {single.name}
+                <Div className="main3">
+                    <Div className="priceName">
+                        <Div className="productName">
+                            {single.name}
+                        </Div>
+                        <Div className="price">{single.price}</Div>
                     </Div>
                     <Div className="productDisc">{single.discription}</Div>
-                    <Div className="price">{single.price}</Div>
                     <Div><Wrapper className="quantityWrap">
             <Button onClick={currentState===1 ?no: decrease } className="decButton">-</Button>
             <Para className="quantCount"><Para>{currentState}</Para></Para>
             <Button onClick={increase} className="incButton">+</Button>
         </Wrapper></Div>
-                    <Div className="btn-single btn-container">
-                            <Button onClick={()=>handlePayment(single.price,currentState)} className="btn btns">Buy Now</Button>
+                    <Div className="btn-container">
+                            <Button onClick={()=>handlePayment(single.price,currentState)} className="sBuyButton"><p className="nameCon">Buy Now</p></Button>
                             <Button 
                             onClick={handleClick}
-                            className="cart-btn btn btns">Add to Cart</Button>
+                            className="sCartButton"><p className="nameCon">Add to Cart</p></Button>
                     </Div>
                 </Div>
             </Wrapper>

@@ -13,7 +13,7 @@ const SingleProductpage = () => {
     <div>
         <Navbar />
         <SingleProduct />
-        <OverlapDiv/>
+        {/* <OverlapDiv/> */}
         <ProductList />
         <Footer />
     </div>

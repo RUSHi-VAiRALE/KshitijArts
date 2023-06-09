@@ -79,7 +79,7 @@ const Card=(props)=>{
                 <div className="name">
                         {props.name}
                     </div>
-                    <div className="price">
+                    <div className="priceinlist">
                         {props.price}
                     </div>
                 </Wrapper>
