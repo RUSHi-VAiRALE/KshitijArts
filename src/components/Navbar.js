@@ -51,29 +51,18 @@ const Navbar = () => {
     const createDiv=()=>{
         if(quantity!==0){
             return(
-                <div
-                                style={{
-                                    borderRadius:"15px",
-                                    paddingRight:"5px",
-                                    paddingLeft:"5px",
-                                    color:"white",
-                                    fontSize:"15px",
-                                    backgroundColor:"#6D67E4",
-                                    textAlign:"center",
-                                    border:"solid",
-                                    position:"absolute",
-                                    top:"2px"
-                                }}>
-                                {
-                                    quantity
-                                }
-                        </div>
+                <p className="btnName" style={{
+                    marginRight:"2px"
+                }}>
+                    {quantity}
+                </p>
             )
         }
     }
 
     return (
-    <div className="ok">
+    <div className="navflexcont">
+        <div className="ok">
         <div className="first">
             <p className="logoName">Kshitij.World</p>
         </div>
@@ -85,40 +74,20 @@ const Navbar = () => {
         </div>
         
         <div className="third">
-                <button className="iconContainer">
-                    <p className="btnName">items  <div>
-                        {
-                            (user!=="")? <Link to="/cart">
-                        <img
-                        style={{
-                            width:"20px",
-                            border:"solid"
-                        }}
-                        typeof="button" 
-                        src={cartComp}/>
-                        </Link> : 
-                        <Link to="/login">
-                        <img
-                        style={{
-                            width:"20px"
-                        }}
-                        typeof="button" 
-                        src={cartComp}/>
-                        </Link>
-                        }
-                        {createDiv()}
-                    </div></p>
+                <div>
+                    <button className="iconContainer">
+                    {createDiv()}
+                    <p className="btnName">items</p>
+                    <img style={{
+                        width:"20px"
+                    }} src={cartComp} />
                 </button>
-                <div 
-                style=
-                {
-                    {
-                        width:"30%",
-                    }
-                }>
+                </div>
+                <div>
                     {checkConditionally()}
             </div>
         </div>
+    </div>
     </div>
     );
 }

@@ -1,11 +1,17 @@
-.backImg{
+.imgCont{
         position: relative;
-        width: 1186px;
-        height: 742px;
-        left: 142px;
+        width: 77.4%;
+        max-width: 1177px;
+        height: auto;
+        left: 9.5%;
         top: 126px;
     /* background-repeat: no-repeat;
     background-size:cover; */
+}
+
+.backImg{
+    width: 100%;
+    height: auto;
 }
 
 .onimgdiv2{
