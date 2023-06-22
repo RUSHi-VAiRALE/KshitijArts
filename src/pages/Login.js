@@ -9,6 +9,7 @@ import {login} from "../redux/apiCalls";
 
 
 const Container = styled.div`
+    border : solid;
     width : 100vw;
     height : 100vh;
     background-image: linear-gradient(120deg, #fadddd 0%, #9c8471 100%);
@@ -18,6 +19,7 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
+border : solid;
 background-color : #fed49a;
 width : 450px;
 height:300px;
@@ -82,10 +84,7 @@ const Login = () => {
     navigate("/");
   }
     return(
-        <div>
-            <Navbar />
-            <Container>
-                <Wrapper>
+                <Wrapper id="login" role="dialog">
                     <Form onSubmit={handleSubmit}>
                         <Title>Login</Title>
                         <Input 
@@ -104,9 +103,6 @@ const Login = () => {
                         <Button type="submit">Login</Button>
                     </Form>
                 </Wrapper>
-            </Container>
-            <Footer />
-        </div>
     );
 }
 

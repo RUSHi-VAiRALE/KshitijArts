@@ -6,6 +6,7 @@ import userIcon from "../icons/user-solid.svg"
 import { useSelector,useDispatch } from "react-redux";
 import Logo from "./Ellipse 1 (3).png"
 import {logout} from "../redux/userLogin"
+import Login from "../pages/Login";
 
 const Navbar = () => {
     const quantity = useSelector((state)=>state.cart.quantity);
