@@ -8,7 +8,7 @@ import Logo from "./Ellipse 1 (3).png"
 import {logout} from "../redux/userLogin"
 import Login from "../pages/Login";
 
-const Navbar = () => {
+const Navbar = ({handleLoginClick}) => {
     const quantity = useSelector((state)=>state.cart.quantity);
     const user = useSelector((state)=>state.user.userName)
     const dispatch = useDispatch();
@@ -18,6 +18,11 @@ const Navbar = () => {
         dispatch(logout())
         navigate("/")
     }
+
+    const handleSignIN = () =>{
+        console.log("i got clicked")
+        handleLoginClick();
+    };
 
     const checkConditionally=()=>{
         if(user!==""){
@@ -44,7 +49,7 @@ const Navbar = () => {
         }
         else{
             return(
-                <button className="nav_btn"><a style={{textDecoration:"none"}} href="/login" className="a"><p className="btnName">Sign in</p></a></button>
+                <button onClick={handleSignIN} className="nav_btn"><p className="btnName">Sign in</p></button>
             )
         }
     }

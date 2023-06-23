@@ -12,14 +12,14 @@ import {
 import { useSelector } from "react-redux";
 
 const App = () => {
-    return <Routes>
+    return (
+        <Routes>
             <Route path="/" element = {<Home />}/>
             <Route path="/register" element = {<Register />}/>
-            <Route path="/login" element = {<Login />}/>
             <Route path="/products" element = {<Product />}/>
             <Route path="/sp/:id" element = {<SingleProduct />}/>
             <Route path="/cart" element = {<Cart />}/>
-        </Routes>
+        </Routes>)
 };
 
 export default App;

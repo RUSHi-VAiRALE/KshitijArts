@@ -11,7 +11,7 @@ body {
     height: 101px;
     background: #F7F7F7;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
 }
 
 .ok {
@@ -170,4 +170,15 @@ body {
     line-height: 25px;
     color: #000000;
     display: inline-block;
+}
+/* login component css*/
+.show {
+    display: block;
+    transition: 800ms;
+    opacity: 1;
+}
+
+.show.active {
+    transform: translateY(100px) scale(0) rotateY(180deg);
+    opacity: 0;
 }

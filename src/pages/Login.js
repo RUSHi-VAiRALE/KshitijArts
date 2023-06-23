@@ -6,7 +6,7 @@ import Footer from "../components/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {login} from "../redux/apiCalls";
-
+import Close from "../components/xmark-solid.svg"
 
 const Container = styled.div`
     border : solid;
@@ -19,11 +19,15 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
+position : absolute;
+top : 300px;
+left: 510px;
 border : solid;
 background-color : #fed49a;
 width : 450px;
 height:300px;
 border-radius : 12px;
+z-index : 1;
 `;
 
 const Title = styled.h1`
@@ -55,7 +59,7 @@ const Button = styled.button`
     font-size : 20px;
 `;
 
-const Login = () => {
+const Login = ({isShowLogin}) => {
 
     const [inputs, setInputs] = useState({});
     const dispatch = useDispatch();
@@ -83,10 +87,22 @@ const Login = () => {
     // }
     navigate("/");
   }
+
+  const handleClose = () =>{
+        const p = document.getElementById("divd").style.display="none";
+  }
+
     return(
-                <Wrapper id="login" role="dialog">
+                <Wrapper id="divd">
                     <Form onSubmit={handleSubmit}>
                         <Title>Login</Title>
+                        <img  onClick={handleClose} style={{
+                            width:"25px",
+                            height:"25px",
+                            position:"absolute",
+                            top:"0px",
+                            right:"2px",
+                        }} src={Close}/>
                         <Input 
                         type="text"
                         placeholder="Username"
