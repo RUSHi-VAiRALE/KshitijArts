@@ -7,22 +7,9 @@ import Separtor from "../components/Separator";
 
 
 const ProductsPage = () => {
-    const [isShowLogin,setIsShowLogin] = useState(false);
-
-    const handleLoginClick = () => {
-        setIsShowLogin(true)
-    };
-
-    const ShowLogin = () => {
-        if (isShowLogin) {
-            return(
-                <Login/>
-            )
-        } 
-    }
+    
     return <div>
-            <Navbar handleLoginClick={handleLoginClick} />
-            {ShowLogin()}
+            <Navbar />
             <Product />
             <Footer />
         </div>

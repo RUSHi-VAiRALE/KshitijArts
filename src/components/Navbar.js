@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Link, useNavigate } from "react-router-dom";
 import menuBar from "../icons/bars-solid.svg";
 import cartComp from "../icons/cart-shopping-solid (2).svg"
@@ -9,6 +9,8 @@ import {logout} from "../redux/userLogin"
 import Login from "./Login";
 
 const Navbar = ({handleLoginClick}) => {
+
+    const [isShowLogin,setIsShowLogin] = useState(false);
     const quantity = useSelector((state)=>state.cart.quantity);
     const user = useSelector((state)=>state.user.userName)
     const dispatch = useDispatch();
@@ -20,12 +22,23 @@ const Navbar = ({handleLoginClick}) => {
     }
 
     const handleSignIN = () =>{
+        setIsShowLogin(true)
+        ShowLogin();
+    };
+
+
+
+    const ShowLogin = () => {
         const p = document.getElementById("divd")
         if (p != null) {
             p.style.visibility="visible"
         }
-        handleLoginClick();
-    };
+        if (isShowLogin) {
+            return(
+            <Login/>
+        )
+        }
+    }
 
     const checkConditionally=()=>{
         if(user!==""){
@@ -70,7 +83,8 @@ const Navbar = ({handleLoginClick}) => {
     }
 
     return (
-    <div className="navflexcont">
+    <div id="loginF" className="navflexcont">
+        {ShowLogin()}
         <div className="ok">
         <div className="first">
             <p className="logoName">Kshitij.World</p>

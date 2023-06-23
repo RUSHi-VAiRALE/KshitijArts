@@ -8,23 +8,8 @@ import OverlapDiv from "../components/overlapDiv"
 
 const Home = () => {
 
-    const [isShowLogin,setIsShowLogin] = useState(false);
-
-    const handleLoginClick = () => {
-        setIsShowLogin(true)
-    };
-
-    const ShowLogin = () => {
-        if (isShowLogin) {
-            return(
-                <Login/>
-            )
-        } 
-    }
-
     return (<div>
-        <Navbar handleLoginClick={handleLoginClick} />
-        {ShowLogin()}
+        <Navbar />
         <BackImg />
         <ProductList />
         <Footer />
