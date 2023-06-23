@@ -1,5 +1,6 @@
 .quantityWrap {
     width: 5vw;
+    height: 20px;
     display: flex;
     justify-content: space-between;
     margin-left: 2%;

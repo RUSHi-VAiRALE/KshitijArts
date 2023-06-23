@@ -48,7 +48,7 @@ const Navbar = ({handleLoginClick}) => {
                     alignItems:"center",
                     flexDirection:"column"
                 }}>
-                    <div style={{
+                    {/* <div style={{
                         display:"flex",
                         marginBottom:"2px"
                     }}>
@@ -58,7 +58,7 @@ const Navbar = ({handleLoginClick}) => {
                         marginLeft:"10px",
                         color:"#2e3718"
                     }}>Hello,{user}</p>
-                    </div>
+                    </div> */}
                     <button onClick={handleLogout} className="logout_btn"><p className="btnName">Logout</p></button>
                 </div>
             )

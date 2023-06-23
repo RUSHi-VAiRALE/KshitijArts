@@ -20,13 +20,14 @@ const H3 = styled.h3``
 
 const createCart=(contact)=>{
     return(
-        <CartCard 
+        <CartCard
             key = {contact._id}
             ID = {contact._id}
             name = {contact.proName}
             disc = {contact.proDisc}
             img = {contact.proURL}
             price = {contact.proPrice}
+            objCart = {contact}
         />
     );
 }
@@ -58,8 +59,35 @@ const Cartcomp = () => {
     } else {
         return (
         <div>
+            <div className="cartName">Shopping Cart</div>
+            <div className="cartContainer">
+            <div className="cartPro">
+            <div className="proInfoCont">
+                <div className="proInfoName">
+
+                </div>
+                <div className="proInfoName">
+                    Product Name
+                </div>
+                <div className="proInfoName">
+                    Unit Price
+                </div>
+                <div className="proInfoName">
+                    Qty
+                </div>
+                <div className="proInfoName">
+                    Subtotal
+                </div>
+            </div>
             {product.map(createCart)}
         </div>
+        <div className="orderSumm">
+
+        </div>
+        </div>
+        </div>
+        
+        
 
     );
     }
