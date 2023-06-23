@@ -91,7 +91,7 @@ const SingleProductComp =()=>{
         }
         } else {
             alert("Please login first")
-            navigate("/login")
+            navigate("/")
         }
     }
 
@@ -121,7 +121,7 @@ useEffect(()=>{
             dispatch(addProduct({single,quantity}))
         } else {
             alert("Please login first!")
-            navigate("/login")
+            navigate("/")
         }
     }
 

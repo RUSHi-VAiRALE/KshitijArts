@@ -6,7 +6,7 @@ import userIcon from "../icons/user-solid.svg"
 import { useSelector,useDispatch } from "react-redux";
 import Logo from "./Ellipse 1 (3).png"
 import {logout} from "../redux/userLogin"
-import Login from "../pages/Login";
+import Login from "./Login";
 
 const Navbar = ({handleLoginClick}) => {
     const quantity = useSelector((state)=>state.cart.quantity);
@@ -20,7 +20,10 @@ const Navbar = ({handleLoginClick}) => {
     }
 
     const handleSignIN = () =>{
-        console.log("i got clicked")
+        const p = document.getElementById("divd")
+        if (p != null) {
+            p.style.visibility="visible"
+        }
         handleLoginClick();
     };
 

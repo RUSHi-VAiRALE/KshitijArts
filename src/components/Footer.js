@@ -10,7 +10,8 @@ const Footer = () => {
         height: "3rem",
         display: "flex",
         justifyContent:"center",
-        bottom:"0px"}}>
+        bottom:"0px",
+        zIndex:"2"}}>
         <p style={{
             marginTop : "1rem",
             fontFamily: "Mulish",

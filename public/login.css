@@ -1,0 +1,112 @@
+.loginDiv
+{
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+position : absolute;
+top : 200px;
+left: 510px;
+background-color : #ffff;
+width : 480px;
+height:480px;
+z-index : 1;
+}
+
+
+.ldiv1{
+    height: 20%;
+}
+
+.ldiv2{
+    height: 50%;
+}
+
+.loginTitle
+{
+    font-size: 24px;
+    font-family: Ovo;
+    line-height: 39px;
+    display: inline-block;
+    margin-top: 10px;
+}
+.signIntext{
+    color: gray;
+        text-align: center;
+        /* Muli 14 Regular*/
+        margin-top: 20px;
+        font-size: 14px;
+        font-family: Mulish;
+        line-height: 21px;
+}
+
+.loginHeart{
+    width: 19px;
+        height: 17px;
+        flex-shrink: 0;
+    display: inline-block;
+    margin-right: 4px;
+}
+.closeImg
+        {
+            color: grey;
+            width: 24.71px;
+            height: 24.71px;
+            flex-shrink: 0;
+            position:absolute;
+            top:0px;
+            right:2px
+}
+
+.loginForm{
+height: 100%;
+display : flex;
+flex-direction : column;
+align-items: center;
+justify-content: space-around;
+}
+
+.loginInput{
+
+    width: 372px;
+    height: 46px;
+    flex-shrink: 0;
+    background: #F7F7F7;
+    margin-bottom: 20px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom-color: #4D8900;
+}
+
+.loginLabel{
+    text-align: left;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.loginLabe2 {
+    text-align: right;
+    display: block;
+}
+
+.inputCont{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.buttonCont{
+    border: solid;
+}
+
+.loginButton{
+    margin-top: 10px;
+    height: 46px;
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-family: Mulish;
+    font-weight: 700;
+    line-height: 25px;
+    background: #4D8900;
+    border: none;
+}

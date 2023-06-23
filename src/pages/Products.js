@@ -2,7 +2,7 @@ import React,{useState} from "react";
 import Product from "../components/ProductList";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Login from "./Login";
+import Login from "../components/Login";
 import Separtor from "../components/Separator";
 
 
@@ -10,7 +10,6 @@ const ProductsPage = () => {
     const [isShowLogin,setIsShowLogin] = useState(false);
 
     const handleLoginClick = () => {
-        console.log("igotcalled")
         setIsShowLogin(true)
     };
 

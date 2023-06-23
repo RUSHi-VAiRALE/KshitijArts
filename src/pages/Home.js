@@ -3,7 +3,7 @@ import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import ProductList from "../components/ProductList";
 import BackImg from "../components/backImg";
-import Login from "./Login";
+import Login from "../components/Login";
 import OverlapDiv from "../components/overlapDiv"
 
 const Home = () => {
@@ -11,7 +11,6 @@ const Home = () => {
     const [isShowLogin,setIsShowLogin] = useState(false);
 
     const handleLoginClick = () => {
-        console.log("igotcalled")
         setIsShowLogin(true)
     };
 
