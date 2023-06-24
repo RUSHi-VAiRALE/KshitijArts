@@ -6,7 +6,6 @@ import Separator from "../components/Separator"
 const singleCart = () => {
     return (<div>
         <Navbar />
-        <Separator/>
         <Cartcomp />
         <Footer />
     </div>

@@ -33,10 +33,7 @@
     gap: 19px;
 }
 
-.orderSumm{
-    border: solid;
-    width: 30%;
-}
+
 
 .cartwrapper{
     width: 100%;
@@ -95,5 +92,121 @@
         font-size: 15px;
         font-family: Mulish;
         line-height: 25px;
+}
+
+.orderSumm {
+    width: 30%;
+    height: 990px;
+    border: solid;
+}
+
+.SummW{
+    width: 282px;
+    color: #000;
+        font-size: 24px;
+        font-family: Ovo;
+        line-height: 39px;
+        text-align: left;
+}
+
+.AddW{
+    width: 282px;
+    color: #000;
+        /* Muli 15 Regular */
+        font-size: 15px;
+        font-family: Mulish;
+        line-height: 25px;
+        text-align: left;
+        margin-bottom: 2%;
+}
+
+.oInputAdd{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.oAinput{
+    width: 282px;
+        height: 46px;
+        flex-shrink: 0;
+        background: #F7F7F7;
+        margin-bottom: 20px;
+        border-top: none;
+        border-right: none;
+        border-left: none;
+        text-align: left;
+        border-bottom-color: #C4C4C4;
+        border-bottom-width: 1px;
+}
+
+
+.OaLabel{
+    width: 282px;
+    text-align: left;
+}
+
+/* .oInputAdd1 {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    border: solid;
+}
+
+.oAinput1 {
+    width: 135px;
+        height: 46px;
+    background: #F7F7F7;
+    margin-bottom: 20px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    text-align: left;
+    border: solid;
+}
+
+.OaLabel1 {
+    text-align: left;
+    border: solid;
+} */
+
+
+.oDiv2{
+    border: solid;
+}
+
+.oInputAdd1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.oAinput1 {
+    width: 282px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.oInputAdd2 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40%;
+}
+
+.placeObutton{
+    width: 282px;
+        height: 46px;
+        color: #FFF;
+            text-align: center;
+            font-size: 16px;
+            font-family: Mulish;
+            font-weight: 700;
+            line-height: 25px;
+            background:#000;
+            border: none;
 }
 
