@@ -1,9 +1,16 @@
 
+
+.mainCartCont{
+    display: flex;
+    flex-direction: column;
+    width: 77.4%;
+    max-width: 1177px;
+    margin: auto;
+}
+
 .cartName{
     position: relative;
     top: 100px;
-    left: 141px;
-    text-align: left;
     color: #000;
     font-size: 28px;
     font-family: Ovo;
@@ -11,13 +18,11 @@
 }
 .cartContainer{
     position: relative;
-        width: 77.4%;
-        max-width: 1177px;
-        height: auto;
-        left: 9.5%;
-        top: 126px;
-        display: flex;
-        justify-content: space-between;
+    max-width: 1177px;
+    height: auto;
+    top: 126px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .cartPro{

@@ -58,7 +58,7 @@ const Cartcomp = () => {
     );
     } else {
         return (
-        <div>
+        <div className="mainCartCont">
             <div className="cartName">Shopping Cart</div>
             <div className="cartContainer">
             <div className="cartPro">

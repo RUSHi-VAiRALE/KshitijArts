@@ -1,0 +1,18 @@
+.aDashCont{
+    display: flex;
+        flex-direction: column;
+        width: 77.4%;
+        max-width: 1177px;
+        margin: auto;
+        border: solid;
+        top: 126px;
+}
+
+.aDashName{
+    position: relative;
+    top: 100px;
+    color: #000;
+        font-size: 28px;
+        font-family: Ovo;
+        line-height: 39px;
+}

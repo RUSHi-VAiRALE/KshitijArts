@@ -3,9 +3,10 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    left: 9.5%;
     top: 156px;
     justify-content: space-between;
+    max-width: 1177px;
+    margin: auto;
 }
 
 .name {

@@ -16,6 +16,19 @@ const Navbar = ({handleLoginClick}) => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const handleItems = () =>{
+        if(user!==""){
+            navigate("/cart");
+        }
+
+        else{
+
+            alert("Please Sign First!");
+            handleSignIN();
+        }
+    }
+
+
     const handleLogout=()=>{
         dispatch(logout())
         navigate("/")
@@ -98,16 +111,13 @@ const Navbar = ({handleLoginClick}) => {
         
         <div className="third">
                 <div>
-                    <Link to={"/cart"}>
-                        <button className="iconContainer">
+                        <button onClick= {handleItems} className="iconContainer">
                     {createDiv()}
                     <p className="btnName">items</p>
                     <img style={{
                         width:"20px"
                     }} src={cartComp} />
                 </button>
-                    </Link>
-                    
                 </div>
                 <div>
                     {checkConditionally()}
