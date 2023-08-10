@@ -24,20 +24,25 @@ const quantity=0;
 
 const CartCard=(props)=>{
     const cartId = useSelector((state)=>state.user.currentUser)
-
-    const [currentState, setState] = useState(1)
-
+    const [currentState, setState] = useState(Number(1));
+    const [currentPrice , setPrice] = useState(Number(props.price))
     const no = () =>{
         
     }
     const increase = () =>{
-        setState(currentState + 1);
+        let curVar = currentState;
+        curVar = curVar + 1;
+        setPrice(curVar * Number(props.price));
+        setState(curVar);
     }
 
     const decrease = () => {
-        setState(currentState - 1);
+        let curVar = currentState;
+        curVar = curVar - 1;
+        setPrice(curVar * Number(props.price));
+        setState(curVar);
     }
-
+    
     const handleClick=()=>{
         try {
             axios
@@ -50,7 +55,6 @@ const CartCard=(props)=>{
 
     return(
         <Wrapper className="cartwrapper">
-                
                     <Div className="Cartmain1">
                             <Div className="imgcont">
                                 <Img className="CartmainProduct" src={props.img} />
@@ -67,7 +71,7 @@ const CartCard=(props)=>{
             <Para className="quantCount"><Para>{currentState}</Para></Para>
             <Button onClick={increase} className="incButton">+</Button>
         </Wrapper>
-            <H3 className="cproductPrice">{props.price}</H3>
+            <H3 className="cproductPrice">{currentPrice}</H3>
                             <Button onClick={handleClick} className="trashCan">
                                 <img src={DelImg}/>
                             </Button>

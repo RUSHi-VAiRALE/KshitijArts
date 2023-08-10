@@ -56,7 +56,7 @@ const Login = () => {
                         </p>
                     </div>
                     <div className="ldiv2">
-                        <form            className="loginForm"             onSubmit={handleSubmit}>
+                        <form            className="loginForm" onSubmit={handleSubmit}>
                         <div className="inputCont">
                                     <label 
                                 for="username"

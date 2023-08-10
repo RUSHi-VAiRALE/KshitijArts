@@ -18,6 +18,8 @@ const P = styled.p``
 
 const H3 = styled.h3``
 
+
+let shipChar = 100;
 const createCart=(contact)=>{
     return(
         <CartCard
@@ -48,6 +50,11 @@ const Cartcomp = () => {
             console.log(error)
         }
 },[CartId.cartid]);
+let subTot = 0;
+product.forEach(
+            (ele)=>subTot = subTot + Number(ele.proPrice)
+        )
+        console.log(subTot)
 
     if (product.length==0) {
         return (
@@ -164,7 +171,7 @@ const Cartcomp = () => {
                         lineHeight: "25px",
                         textAlign:"right"
                     }}>
-                        $ 2800
+                        &#x20b9; {subTot}
                     </div>
                 </div>
                 <div className="oAinput1">
@@ -186,7 +193,7 @@ const Cartcomp = () => {
                         lineHeight: "25px",
                         textAlign:"right"
                     }}>
-                        $ 100
+                        &#x20b9; {Number(shipChar)}
                     </div>
                 </div>
                 <div style={{
@@ -210,7 +217,7 @@ const Cartcomp = () => {
                         lineHeight: "25px",
                         textAlign:"right"
                     }}>
-                        $ 2900
+                        &#x20b9; {shipChar+subTot}
                     </div>
                 </div>
                 <div style={{

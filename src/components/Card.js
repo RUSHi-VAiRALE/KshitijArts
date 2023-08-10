@@ -17,7 +17,7 @@ const Paragraph = styled.div``
 
 
 const Card=(props)=>{
-
+    console.log(props)
     const user = useSelector((state)=>state.user.userName);
     const cartId = useSelector((state)=>state.user.currentUser);
     const navigate = useNavigate();
@@ -80,7 +80,7 @@ const Card=(props)=>{
                         {props.name}
                     </div>
                     <div className="priceinlist">
-                        {props.price}
+                        &#x20b9; {props.price}
                     </div>
                 </Wrapper>
             </div>
