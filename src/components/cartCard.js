@@ -6,6 +6,7 @@ import DelImg from "./trash-solid.svg"
 import { incQty,decQty } from "../redux/apiCalls";
 import { setProduct } from "../redux/apiCalls";
 import { subTotalProducts,subTotalProductsreset } from "../redux/userCart";
+import { useEffect } from "react";
 
 const Container = styled.div``
 
@@ -30,7 +31,12 @@ const CartCard=(props)=>{
     const productArray = useSelector((state)=>state.cart.products)
     const dispatch = useDispatch();
     const [currentState, setState] = useState(productArray[props.index].quantity);
-    const [currentPrice , setPrice] = useState(productArray[props.index].proPrice);
+    const [currentPrice , setPrice] = useState(productArray[props.index].proPrice * productArray[props.index].quantity);
+
+    // useEffect(() =>{
+    //     setPrice(productArray[props.index].proPrice * productArray[props.index].quantity)
+    // },[cartId.cartid]);
+    
     const no = () =>{
         
     }

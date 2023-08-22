@@ -26,7 +26,7 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     login(dispatch,inputs);
-    setProduct(dispatch,CartId)
+    // setProduct(dispatch,CartId)
     // dispatch(loginStart());
     // try {
     //     axios
