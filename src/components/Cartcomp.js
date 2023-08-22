@@ -3,6 +3,8 @@ import styled from "styled-components";
 import axios from "axios";
 import { useSelector,useDispatch } from "react-redux";
 import CartCard from "./cartCard";
+import { setProduct } from "../redux/apiCalls";
+import { SubTotalProducts,SubTotalProductsreset } from "../redux/productPriceUpdate";
 
 const Wrapper = styled.div``;
 
@@ -20,7 +22,8 @@ const H3 = styled.h3``
 
 
 let shipChar = 100;
-const createCart=(contact)=>{
+const createCart=(contact,index)=>{
+    console.log(index)
     return(
         <CartCard
             key = {contact._id}
@@ -29,6 +32,8 @@ const createCart=(contact)=>{
             disc = {contact.proDisc}
             img = {contact.proURL}
             price = {contact.proPrice}
+            qty = {contact.quantity}
+            index = {index}
             objCart = {contact}
         />
     );
@@ -37,28 +42,39 @@ const createCart=(contact)=>{
 
 
 const Cartcomp = () => {
-    const [product,setProduct] = useState([]);
+    // const [product,setProduct] = useState([]);
+    console.log("first")
+    const ind=0;
     const CartId = useSelector((state)=>state.user.currentUser)
+    const product = useSelector((state)=>state.cart.products);
+    // const subTot = useSelector((state)=>state.cart.subTotal);
+    let subTotal = 0;
+    product.forEach(element => {
+                subTotal = subTotal + (element.quantity * element.proPrice);
+            });
+    const dispatch = useDispatch();
     useEffect(()=>{
-        try {
-            axios
-        .get("http://localhost:8000/userCart/allCart/"+CartId.cartid,{headers:{authorization: "Bearer "+CartId.accessToken}})
-        .then((res)=>
-            setProduct(res.data)
-        );
-        } catch (error) {
-            console.log(error)
-        }
+        setProduct(dispatch,CartId);
+        // dispatch(SubTotalProductsreset());
+        // dispatch(SubTotalProducts());
+        // try {
+        //     axios
+        // .get("http://localhost:8000/userCart/allCart/"+CartId.cartid,{headers:{authorization: "Bearer "+CartId.accessToken}})
+        // .then((res)=>
+        //     setProduct(res.data)
+        // );
+        // } catch (error) {
+        //     console.log(error)
+        // }
 },[CartId.cartid]);
-let subTot = 0;
-product.forEach(
-            (ele)=>subTot = subTot + Number(ele.proPrice)
-        )
-        console.log(subTot)
+
+
 
     if (product.length==0) {
         return (
-        <div>
+        <div style={{
+            top:"400px"
+        }}>
             <h1>YOUR CART IS EMPTY</h1>
         </div>
 
@@ -86,7 +102,7 @@ product.forEach(
                     Subtotal
                 </div>
             </div>
-            {product.map(createCart)}
+            {product.map(createCart,ind)}
         </div>
         <div className="orderSumm">
                 <div className="oInputAdd">
@@ -171,7 +187,7 @@ product.forEach(
                         lineHeight: "25px",
                         textAlign:"right"
                     }}>
-                        &#x20b9; {subTot}
+                        &#x20b9; {subTotal}
                     </div>
                 </div>
                 <div className="oAinput1">
@@ -217,7 +233,7 @@ product.forEach(
                         lineHeight: "25px",
                         textAlign:"right"
                     }}>
-                        &#x20b9; {shipChar+subTot}
+                        &#x20b9; {shipChar+subTotal}
                     </div>
                 </div>
                 <div style={{

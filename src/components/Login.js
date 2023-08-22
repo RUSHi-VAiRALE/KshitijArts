@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import {login} from "../redux/apiCalls";
 import Close from "../components/Group 8.svg"
 import Heart from "../components/Vector.svg"
-
+import { setProduct } from "../redux/apiCalls";
 
 const Login = () => {
 
@@ -16,6 +16,7 @@ const Login = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate()
     const token = useSelector((state)=>state.user);
+    const CartId = useSelector((state)=>state.user.currentUser)
 
   const handleChange = (event) => {
     const name = event.target.name;
@@ -25,6 +26,7 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     login(dispatch,inputs);
+    setProduct(dispatch,CartId)
     // dispatch(loginStart());
     // try {
     //     axios
@@ -48,8 +50,13 @@ const Login = () => {
     return(
                 <div className="loginDiv" id="divd">
                     <div className="ldiv1">
-                        <img className="loginHeart" src={Heart}/>
+                        <div style={{
+                            display:"flex",
+                            justifyContent:"center"
+                        }}>
+                            <img className="loginHeart" src={Heart}/>
                         <p className="loginTitle">Hi, keep track of your favorites!</p>
+                        </div>
                         <img className="closeImg"  onClick={handleClose} src={Close}/>
                         <p className="signINtext">
                             Please sign in.

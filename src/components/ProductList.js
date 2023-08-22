@@ -1,5 +1,7 @@
 import axios from "axios";
 import React, { useState,useEffect } from "react";
+import { useSelector,useDispatch } from "react-redux";
+import { setProduct } from "../redux/apiCalls";
 import Card from "./Card";
 
 const createCard=(contact) => {
@@ -19,6 +21,7 @@ const createCard=(contact) => {
 const ProductList = () => {
 
     const [inArray,setArray] = useState([]);
+    
     useEffect(()=>{
         axios
             .get("http://localhost:8000/product/allProducts")

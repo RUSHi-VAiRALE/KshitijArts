@@ -15,6 +15,8 @@ z-index : 1;
 
 .ldiv1{
     height: 20%;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .ldiv2{
@@ -29,14 +31,14 @@ z-index : 1;
     display: inline-block;
     margin-top: 10px;
 }
-.signIntext{
+.signINtext{
     color: gray;
         text-align: center;
         /* Muli 14 Regular*/
         margin-top: 20px;
         font-size: 14px;
         font-family: Mulish;
-        line-height: 21px;
+        line-height: 21px
 }
 
 .loginHeart{
@@ -45,6 +47,7 @@ z-index : 1;
         flex-shrink: 0;
     display: inline-block;
     margin-right: 4px;
+    margin-top: 22px;
 }
 .closeImg
         {

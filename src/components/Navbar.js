@@ -6,6 +6,7 @@ import userIcon from "../icons/user-solid.svg"
 import { useSelector,useDispatch } from "react-redux";
 import Logo from "./Ellipse 1 (3).png"
 import {logout} from "../redux/userLogin"
+import { logoutProducts } from "../redux/userCart";
 import Login from "./Login";
 
 const Navbar = ({handleLoginClick}) => {
@@ -31,6 +32,7 @@ const Navbar = ({handleLoginClick}) => {
 
     const handleLogout=()=>{
         dispatch(logout())
+        dispatch(logoutProducts())
         navigate("/")
     }
 

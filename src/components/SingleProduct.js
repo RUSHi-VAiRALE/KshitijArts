@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addProduct } from "../redux/userCart";
+// import { addProduct } from "../redux/userCart";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
-
 
 const Container = styled.div``
 
@@ -118,7 +117,7 @@ useEffect(()=>{
             } catch (error) {
                 console.log(error)
             }
-            dispatch(addProduct({single,quantity}))
+            // dispatch(addProduct({single,quantity}))
         } else {
             alert("Please login first!")
             navigate("/")

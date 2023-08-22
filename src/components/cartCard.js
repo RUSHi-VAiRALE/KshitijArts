@@ -1,8 +1,11 @@
 import React,{useState} from "react";
 import styled from "styled-components";
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import DelImg from "./trash-solid.svg"
+import { incQty,decQty } from "../redux/apiCalls";
+import { setProduct } from "../redux/apiCalls";
+import { subTotalProducts,subTotalProductsreset } from "../redux/userCart";
 
 const Container = styled.div``
 
@@ -24,8 +27,10 @@ const quantity=0;
 
 const CartCard=(props)=>{
     const cartId = useSelector((state)=>state.user.currentUser)
-    const [currentState, setState] = useState(Number(1));
-    const [currentPrice , setPrice] = useState(Number(props.price))
+    const productArray = useSelector((state)=>state.cart.products)
+    const dispatch = useDispatch();
+    const [currentState, setState] = useState(productArray[props.index].quantity);
+    const [currentPrice , setPrice] = useState(productArray[props.index].proPrice);
     const no = () =>{
         
     }
@@ -34,6 +39,10 @@ const CartCard=(props)=>{
         curVar = curVar + 1;
         setPrice(curVar * Number(props.price));
         setState(curVar);
+        incQty(cartId,props.index);
+        setProduct(dispatch,cartId);
+        // dispatch(subTotalProducts());
+        // dispatch(updateQty());
     }
 
     const decrease = () => {
@@ -41,6 +50,9 @@ const CartCard=(props)=>{
         curVar = curVar - 1;
         setPrice(curVar * Number(props.price));
         setState(curVar);
+        decQty(cartId,props.index);
+        setProduct(dispatch,cartId);
+        // dispatch(subTotalProducts());
     }
     
     const handleClick=()=>{
@@ -50,7 +62,10 @@ const CartCard=(props)=>{
         } catch (error) {
             console.log(error)
     }
-    window.location.reload(true)
+    setProduct(dispatch,cartId);
+    // dispatch(subTotalProductsreset());
+    // dispatch(subTotalProducts());
+    // window.location.reload(true)
 }
 
     return(
