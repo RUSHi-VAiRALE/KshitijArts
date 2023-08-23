@@ -60,6 +60,7 @@ const SingleProductComp =()=>{
                     pId : single._id,
                     pImg  : single.imgURL,
                     pName : single.name,
+                    pQuant : Number(currentState),
                     pPrice: (data.amount/100)
                 }
                 axios.post("http://localhost:8000/payment/verify/"+token.cartid,{response:response,proInfo})
@@ -76,7 +77,9 @@ const SingleProductComp =()=>{
     }
 
     const handlePayment=(amount,cuState)=>{
+        console.log(amount,cuState)
         if (user!=="") {
+            console.log("im in");
             const _data = {amount:amount,
                             quantity:cuState}
         try {

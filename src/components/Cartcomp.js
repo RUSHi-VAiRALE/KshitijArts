@@ -5,7 +5,7 @@ import { useSelector,useDispatch } from "react-redux";
 import CartCard from "./cartCard";
 import { setProduct } from "../redux/apiCalls";
 import { SubTotalProducts,SubTotalProductsreset } from "../redux/productPriceUpdate";
-
+import { useNavigate } from "react-router-dom";
 const Wrapper = styled.div``;
 
 const Div = styled.div``
@@ -48,6 +48,8 @@ const Cartcomp = () => {
     const CartId = useSelector((state)=>state.user.currentUser)
     const product = useSelector((state)=>state.cart.products);
     // const subTot = useSelector((state)=>state.cart.subTotal);
+    const navigate = useNavigate();
+    const user = useSelector((state)=>state.user.userName);
     let subTotal = 0;
     product.forEach(element => {
                 subTotal = subTotal + (element.quantity * element.proPrice);
@@ -67,6 +69,59 @@ const Cartcomp = () => {
         //     console.log(error)
         // }
 },[CartId.cartid]);
+
+ const handleOpenRazorpay = (data) =>{
+        const options = {
+            key : 'rzp_test_W1CfhGkA90XLGW',
+            amount : data.amount,
+            currency : data.currency,
+            name : "KshitijArts",
+            discription : 'xyz',
+            order_id : data.id,
+            handler : function (response) {
+                console.log(response)
+                const proInfo = product;
+                // const proInfo = {
+                //     proArray : 
+                //     // pId : single._id,
+                //     // pImg  : single.imgURL,
+                //     // pName : single.name,
+                //     // pQuant : Number(currentState),
+                //     // pPrice: (data.amount/100)
+                // }
+                axios.post("http://localhost:8000/payment/verify/"+CartId.cartid,{response:response,proInfo})
+                .then(res=>{
+                    console.log(res)
+                })
+                .catch(err=>{
+                    console.log(err)
+                })
+            }
+        }
+        const rzp = new window.Razorpay(options)
+        rzp.open();
+    }
+
+    const handlePayment=(amount)=>{
+        console.log("i got clicked in place order")
+        console.log(amount)
+        if (user!=="") {
+            console.log("im in");
+            const _data = {amount:amount}
+        try {
+            axios.post("http://localhost:8000/payment/orders",_data)
+        .then(res=>{
+            console.log(res.data)
+            handleOpenRazorpay(res.data);
+        })
+        } catch (error) {
+            console.log(error)
+        }
+        } else {
+            alert("Please login first")
+            navigate("/")
+        }
+    }
 
 
 
@@ -246,7 +301,7 @@ const Cartcomp = () => {
                     }}></div>
                 </div>
                 <div className="oInputAdd2">
-                    <button className="placeObutton">
+                    <button onClick={()=>handlePayment(subTotal)} className="placeObutton">
                         Place Order
                     </button>
                 </div>
