@@ -1,10 +1,11 @@
 .imgCont{
         position: relative;
-        width: 77.4%;
-        max-width: 1177px;
+        width: 80.4%;
+        max-width: 1277px;
         height: auto;
         top: 126px;
         margin: auto;
+        border: solid;
     /* background-repeat: no-repeat;
     background-size:cover; */
 }

@@ -1,11 +1,11 @@
 .container {
-    width: 77.5%;
+    width: 80.5%;
     display: flex;
     flex-wrap: wrap;
     position: relative;
     top: 156px;
+    max-width: 1277px;
     justify-content: space-between;
-    max-width: 1177px;
     margin: auto;
 }
 
@@ -16,7 +16,6 @@
         font-size: 15px;
         line-height: 19px;
         text-align: center;
-    
         color: #5E5E5E;
     /* margin: 10% 20px 0; */
 }
@@ -28,16 +27,15 @@
         font-size: 18px;
         line-height: 37px;
         /* or 206% */
-    
+        /* display: block; */
         text-align: center;
-    
         color: #5E5E5E;
 }
 
 .circle-img {
     width: 275px;
     height: 352px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     /* border-top-right-radius: 20px; */
     /* border-top-left-radius: 20px; */
 }
@@ -48,11 +46,14 @@
 
 
 .wrapper {
-    width: 270px;
-    height: 400px;
+    width: 275px;
+    height: 415px;
     display: flex;
     flex-direction: column;
-    
+}
+.wrapper:hover {
+    box-shadow: 0px 0px 4px 4px gray;
+    border: 1px solid;
 }
 
 /* .secDiv {
@@ -93,13 +94,10 @@
 }
 .proBox{
         width: 275px;
-        height: 400px;
-        margin-top: 10px;
+        height: 415px;
+        margin-bottom: 10px;
 }
-.proBox:hover{
-    box-shadow: 0px 0px 8px 5px gray;
-    border: 1px solid;
-}
+
 .products{
     font-family: 'Ovo';
         font-style: normal;
