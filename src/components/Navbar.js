@@ -105,10 +105,10 @@ const Navbar = ({handleLoginClick}) => {
             <p className="logoName">Kshitij.World</p>
         </div>
         <div className="second">
-            <div ><a href="/" className="nice">Home</a></div>
-            <div ><a href="/products" className="nice">Products</a></div>
-            <div className="nice">About</div>
-            <div className="nice">Contact</div>
+            <div className="navDiv" ><a href="/"><p className="nice">Home</p></a></div>
+            <div className="navDiv" ><a href="/products"><p className="nice">Products</p></a></div>
+            <div className="navDiv" ><p className="nice">About</p></div>
+            <div className="navDiv" ><p className="nice">Contact</p></div>
         </div>
         
         <div className="third">

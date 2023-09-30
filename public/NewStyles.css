@@ -3,7 +3,7 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    top: 156px;
+    top: 236px;
     max-width: 1277px;
     justify-content: space-between;
     margin: auto;
@@ -104,7 +104,135 @@
         font-weight: 400;
         font-size: 32px;
         line-height: 36px;
-        text-align: center;
-        display: inline-block;
+        display: flex;
+        justify-content: center;
         color: #000000;
+}
+
+.productscontain{
+    position: relative;
+    width: 80.4%;
+    top: 186px;
+    margin: auto;
+}
+
+@media(max-width : 1056px){
+    .container{
+        border: solid;
+    }
+
+    .proBox{
+        width: 245px;
+        height: 395px;
+        margin-bottom: 10px;
+    }
+
+    .wrapper{
+        width: 245px;
+        height: 395px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .circle-img{
+        width: 245px;
+        height: 322px;
+    }
+}
+
+@media(max-width : 942px) {
+    .container {
+        border: solid;
+    }
+
+    .proBox {
+        width: 225px;
+        height: 365px;
+        margin-bottom: 10px;
+    }
+
+    .wrapper {
+        width: 225px;
+        height: 365px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .circle-img {
+        width: 225px;
+        height: 302px;
+    }
+}
+
+@media(max-width : 872px) {
+    .container {
+        border: solid;
+    }
+
+    .proBox {
+        width: 205px;
+        height: 345px;
+        margin-bottom: 10px;
+    }
+
+    .wrapper {
+        width: 205px;
+        height: 345px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .circle-img {
+        width: 205px;
+        height: 282px;
+    }
+}
+
+@media(max-width : 786px) {
+    .container {
+        border: solid;
+    }
+
+    .proBox {
+        width: 245px;
+        height: 395px;
+        margin-bottom: 10px;
+    }
+
+    .wrapper {
+        width: 245px;
+        height: 395px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .circle-img {
+        width: 245px;
+        height: 322px;
+    }
+}
+
+@media(max-width : 625px) {
+    .container {
+        border: solid;
+        justify-content: center;
+    }
+
+    .proBox {
+        width: 245px;
+        height: 395px;
+        margin-bottom: 10px;
+    }
+
+    .wrapper {
+        width: 245px;
+        height: 395px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .circle-img {
+        width: 245px;
+        height: 322px;
+    }
 }

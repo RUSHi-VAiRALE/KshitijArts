@@ -11,6 +11,16 @@ const Home = () => {
     return (<div>
         <Navbar />
         <BackImg />
+        <div style={{
+            width:"80.1%",
+            border:"solid",
+            position:"relative",
+            maxWidth: "1277px",
+            margin:"auto",
+            top:"156px",
+            borderColor:"#D9D9D9"
+        }}></div>
+        <OverlapDiv />
         <ProductList />
         <Footer />
     </div>)

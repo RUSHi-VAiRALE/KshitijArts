@@ -11,8 +11,8 @@
 .ok {
     margin: auto;
     position: relative;
-    width: 77.5%;
-    max-width: 1177px;
+    width: 80.4%;
+    max-width: 1277px;
     height: 80px;
     display: flex;
     flex-shrink: 1;
@@ -26,8 +26,7 @@
 .first{
     width: 30%;
     display: flex;
-    align-items: start;
-    padding: 0px;
+    align-items: center;
 }
 .second{
     flex: 1;
@@ -48,15 +47,24 @@
     letter-spacing:0.01em;
     color:#2e3718;
     font-size: 1.5em;
-    text-decoration: none;
     font-family: 'Mulish';
     font-style: normal;
     font-weight: 400;
     line-height: 25px;
+    display: flex;
+    justify-content: center;
 }
 
 .nice:hover{
-    color: white;
+    font-size: 1.7em;
+}
+
+.navDiv{
+    flex: 1;
+}
+
+a{
+    text-decoration: none;
 }
 
 .nav_btn {
@@ -66,27 +74,47 @@
     border: 1px solid #A0A0A0;
 }
 
-/* .nav_btn:hover{
-    background-color: white;
-} */
+.nav_btn:hover{
+    background-color: #7e2bfa;
+}
 
 .logoName {
-        position: absolute;
-        top: 36.64%;
-        bottom: 41.04%;
-    
         font-family: 'Palanquin Dark';
         font-style: normal;
         font-weight: 400;
-        font-size: 48px;
-        line-height: 25px;
+        font-size: 38px;
+        /* line-height: 52%; */
         /* or 52% */
     
-        letter-spacing: -0.055em;
+        /* letter-spacing: -0.055em; */
     
         /* Black */
         padding: 0px;
         color: #000000;
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+            background-image: linear-gradient(-225deg,
+                    #231557 0%,
+                    #44107a 29%,
+                    #ff1361 67%,
+                    #fff800 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            /* color: #fff; */
+            background-clip: text;
+            /* text-fill-color: transparent; */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 2s linear infinite;
+            /* display: inline-block; */
+            /* font-size: 190px; */
+}
+@keyframes textclip {
+    to {
+        background-position: 200% center;
+    }
 }
 .menuBar {
         width: 35px;
@@ -114,9 +142,18 @@
     height: 200px;
 }
 
-@media (max-width : 819px) {
+@media (max-width : 1047px) {
     .first {
-        width: 30%;
+        align-items: center;
+    }
+
+    .ok{
+        justify-content: center;
+    }
+
+    .logoName {
+        display: flex;
+        justify-content: center;
     }
 
     .nice {
@@ -128,7 +165,7 @@
     }
 
     .second {
-        flex: 1;
+        display: none;
     }
 
     .third {
@@ -149,6 +186,11 @@
     border: 1px solid #A0A0A0;
     margin-right: 8px;
 }
+
+.iconContainer:hover{
+    background: #7e2bfa;
+}
+
 .icon{
                 width: 20px;
                 border:solid 2px;
@@ -166,6 +208,11 @@
             line-height: 25px;
             color: #000000;
 }
+
+.logout_btn:hover{
+    background: #7e2bfa;
+}
+
 .btnName{
     font-family: 'Mulish';
     font-style: normal;

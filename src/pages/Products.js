@@ -4,12 +4,14 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Login from "../components/Login";
 import Separtor from "../components/Separator";
+import OverlapDiv from "../components/overlapDiv";
 
 
 const ProductsPage = () => {
     
     return <div>
             <Navbar />
+            <OverlapDiv />
             <Product />
             <Footer />
         </div>
