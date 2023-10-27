@@ -138,18 +138,14 @@ return(
         <div>
             <Wrapper className="swrapper">
                     <Div className="main1">
-                        <Img id="1" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg" src={single.img1URL} />
-                        <Img id="2" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg" src={single.img2URL} />
-                        <Img id="3" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg" src={single.img3URL} />
-                        <Img id="4" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg" src={single.img4URL} />
-                        <Img id="5" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg" src={single.img5URL} />
+                        <Div className="sideImg"><Img id="1" className="sideImg1" onMouseEnter={handleClick1} onMouseOut={handleClick1}  src={single.img1URL} /></Div>
+                        <Div className="sideImg"><Img id="2" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg1" src={single.img2URL} /></Div>
+                        <Div className="sideImg"><Img id="3" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg1" src={single.img3URL} /></Div>
+                        <Div className="sideImg"><Img id="4" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg1" src={single.img4URL} /></Div>
+                        <Div className="sideImg"><Img id="5" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg1" src={single.img5URL} /></Div>
                     </Div>
                 <Div className="main2">
-                    <Div className="mainImg">
-                        <Div>
                             <Img className="mainProduct" src={single.imgURL} />
-                        </Div>
-                    </Div>
                 </Div>
                 <Div className="main3">
                     <Div className="priceName">

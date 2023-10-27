@@ -82,7 +82,7 @@ a{
         font-family: 'Palanquin Dark';
         font-style: normal;
         font-weight: 400;
-        font-size: 38px;
+        font-size: 230%;
         /* line-height: 52%; */
         /* or 52% */
     
@@ -154,6 +154,7 @@ a{
     .logoName {
         display: flex;
         justify-content: center;
+        font-size: 34px;
     }
 
     .nice {
