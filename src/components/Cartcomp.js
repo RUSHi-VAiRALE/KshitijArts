@@ -78,6 +78,7 @@ const Cartcomp = () => {
             name : "KshitijArts",
             discription : 'xyz',
             order_id : data.id,
+            callback_url : "www.google.com",
             handler : function (response) {
                 console.log(response)
                 const proInfo = product;
