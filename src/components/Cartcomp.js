@@ -79,6 +79,7 @@ const Cartcomp = () => {
             discription : 'xyz',
             order_id : data.id,
             callback_url : "www.google.com",
+            redirect : true,
             handler : function (response) {
                 console.log(response)
                 const proInfo = product;
