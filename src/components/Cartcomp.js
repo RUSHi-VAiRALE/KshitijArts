@@ -78,8 +78,6 @@ const Cartcomp = () => {
             name : "KshitijArts",
             discription : 'xyz',
             order_id : data.id,
-            callback_url : "www.google.com",
-            redirect : true,
             handler : function (response) {
                 console.log(response)
                 const proInfo = product;
@@ -157,6 +155,9 @@ const Cartcomp = () => {
                 </div>
                 <div className="proInfoName">
                     Subtotal
+                </div>
+                <div className="proInfoName">
+                    Remove
                 </div>
             </div>
             {product.map(createCart,ind)}

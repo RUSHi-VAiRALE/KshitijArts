@@ -9,7 +9,7 @@
 .quantCount {
     width: 22px;
     display: flex;
-    font-size: large;
+    font-size: 15px;
     justify-content: center;
     border:solid;
     border: none;
@@ -17,12 +17,10 @@
 
 .decButton {
     border: none;
-    font-size: large;
     background-color: transparent;
 }
 
 .incButton {
     border: none;
-    font-size: large;
     background-color: transparent;
 }
