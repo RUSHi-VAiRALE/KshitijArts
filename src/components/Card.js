@@ -17,7 +17,6 @@ const Paragraph = styled.div``
 
 
 const Card=(props)=>{
-    console.log(props)
     const user = useSelector((state)=>state.user.userName);
     const cartId = useSelector((state)=>state.user.currentUser);
     const navigate = useNavigate();
@@ -58,7 +57,6 @@ const Card=(props)=>{
         try {
             axios.post("http://localhost:8000/payment/orders",_data)
         .then(res=>{
-            console.log(res.data)
             handleOpenRazorpay(res.data);
         })
         } catch (error) {

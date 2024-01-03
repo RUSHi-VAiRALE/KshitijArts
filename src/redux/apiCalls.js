@@ -8,16 +8,18 @@ export const login= async (dispatch,user)=>{
     try {
         await axios
         .post("http://localhost:8000/user/auth/login",user)
-        .then((res)=>
-            dispatch(loginSuccess(res.data))) 
+        .then((res)=>{
+            dispatch(loginSuccess(res.data))
+        })
     } catch (error) {
+        console.log(error)
         dispatch(loginFailure());
     }
 }
 
 export const setProduct = async (dispatch,cartId) =>{
     try {
-            axios
+        await   axios
         .get("http://localhost:8000/userCart/allCart/"+cartId.cartid,{headers:{authorization: "Bearer "+cartId.accessToken}})
         .then((res)=>
             dispatch(setProducts(res.data))
@@ -29,7 +31,7 @@ export const setProduct = async (dispatch,cartId) =>{
 
 export const incQty = async(cartID,index)=>{
     try {
-        axios
+        await axios
         .post("http://localhost:8000/userCart/incqty/"+cartID.cartid+"/"+index,{headers:{authorization: "Bearer "+cartID.accessToken}})
         .then((res)=>
             console.log(res)

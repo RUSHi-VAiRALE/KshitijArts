@@ -16,6 +16,7 @@ export const userSlice = createSlice({
             state.currentUser=action.payload
             state.userName = action.payload.firstName
             state.isFetching = false
+            state.isError = false
         },
         loginFailure:(state)=>{
             state.isError = true

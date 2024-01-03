@@ -10,12 +10,14 @@ import {
     Routes
 } from "react-router-dom";
 import { useSelector } from "react-redux";
+import Login from "./components/Login";
 
 const App = () => {
     return (
         <Routes>
             <Route path="/" element = {<Home />}/>
             <Route path="/register" element = {<Register />}/>
+            <Route path="/login" element = {<Login />}/>
             <Route path="/products" element = {<Product />}/>
             <Route path="/sp/:id" element = {<SingleProduct />}/>
             <Route path="/cart" element = {<Cart />}/>

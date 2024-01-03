@@ -11,7 +11,6 @@ import Login from "./Login";
 
 const Navbar = ({handleLoginClick}) => {
 
-    const [isShowLogin,setIsShowLogin] = useState(false);
     const quantity = useSelector((state)=>state.cart.quantity);
     const user = useSelector((state)=>state.user.userName)
     const dispatch = useDispatch();
@@ -23,7 +22,6 @@ const Navbar = ({handleLoginClick}) => {
         }
 
         else{
-
             alert("Please Sign First!");
             handleSignIN();
         }
@@ -37,23 +35,23 @@ const Navbar = ({handleLoginClick}) => {
     }
 
     const handleSignIN = () =>{
-        setIsShowLogin(true)
-        ShowLogin();
+        console.log('first')
+        navigate("/login");
     };
 
 
 
-    const ShowLogin = () => {
-        const p = document.getElementById("divd")
-        if (p != null) {
-            p.style.visibility="visible"
-        }
-        if (isShowLogin) {
-            return(
-            <Login/>
-        )
-        }
-    }
+    // const ShowLogin = () => {
+    //     const p = document.getElementById("divd")
+    //     if (p != null) {
+    //         p.style.visibility="visible"
+    //     }
+    //     if (isShowLogin) {
+    //         return(
+    //         <Login/>
+    //     )
+    //     }
+    // }
 
     const checkConditionally=()=>{
         if(user!==""){
@@ -99,7 +97,6 @@ const Navbar = ({handleLoginClick}) => {
 
     return (
     <div id="loginF" className="navflexcont">
-        {ShowLogin()}
         <div className="ok">
         <div className="first">
             <p className="logoName">Kshitij.World</p>

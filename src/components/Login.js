@@ -15,17 +15,21 @@ const Login = () => {
     const [inputs, setInputs] = useState({});
     const dispatch = useDispatch();
     const navigate = useNavigate()
-    const token = useSelector((state)=>state.user);
+    const failure = useSelector((state)=>state.user.isError);
+    console.log(failure)
     const CartId = useSelector((state)=>state.user.currentUser)
-
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
     setInputs(values => ({...values, [name]: value}))
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     login(dispatch,inputs);
+    if(failure===false){
+        navigate("/");
+    }
     // setProduct(dispatch,CartId)
     // dispatch(loginStart());
     // try {
@@ -37,18 +41,19 @@ const Login = () => {
     // } catch (error) {
     //     dispatch(loginFailure());
     // }
-    navigate("/");
+    
   }
 
-  const handleClose = () =>{
-        const p = document.getElementById("divd");
-        p.style.visibility="hidden";
-        // p.style.visibility="visible";
-        // console.log(p.style.visibility);
-  }
+//   const handleClose = () =>{
+//         const p = document.getElementById("divd");
+//         p.style.visibility="hidden";
+//         // p.style.visibility="visible";
+//         // console.log(p.style.visibility);
+//   }
 
     return(
-                <div className="loginDiv" id="divd">
+            <div>
+                <div className="loginDiv">
                     <div className="ldiv1">
                         <div style={{
                             display:"flex",
@@ -57,7 +62,7 @@ const Login = () => {
                             <img className="loginHeart" src={Heart}/>
                         <p className="loginTitle">Hi, keep track of your favorites!</p>
                         </div>
-                        <img className="closeImg"  onClick={handleClose} src={Close}/>
+                        <img className="closeImg"  src={Close}/>
                         <p className="signINtext">
                             Please sign in.
                         </p>
@@ -88,13 +93,15 @@ const Login = () => {
                                 value={inputs.password || ""}
                                 onChange={handleChange}
                                 />
+                                {(failure)?<p style={{color:"red"}}>User or Password does not match</p>:<p>djkdf</p>}
                                 <label className="loginLabe2">Forgot password?</label>
-                                <button className="loginButton" type="submit">Sign In</button>
+                                <button className="loginButton">Sign In</button>
                         </div>
                         
                         </form>
                     </div>
                 </div>
+            </div>
     );
 }
 
