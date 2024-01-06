@@ -9,14 +9,15 @@ import {login} from "../redux/apiCalls";
 import Close from "../components/Group 8.svg"
 import Heart from "../components/Vector.svg"
 import { setProduct } from "../redux/apiCalls";
+import { loginFailure } from "../redux/userLogin";
 
 const Login = () => {
 
     const [inputs, setInputs] = useState({});
+    const {isFetching, isError} = useSelector((state)=>state.user)
+    const {isFetch, isSuc} = useSelector((state)=>state.user)
     const dispatch = useDispatch();
     const navigate = useNavigate()
-    const failure = useSelector((state)=>state.user.isError);
-    console.log(failure)
     const CartId = useSelector((state)=>state.user.currentUser)
   const handleChange = (event) => {
     const name = event.target.name;
@@ -24,12 +25,21 @@ const Login = () => {
     setInputs(values => ({...values, [name]: value}))
   }
 
+//  const checkError = () =>{
+//     if(error){
+//         let a = document.getElementById("pError");
+//         a.style.visibility = "visible";
+//     }
+//     else{
+//         let a = document.getElementById("pError");
+//         a.style.visibility = "hidden";
+//         navigate("/");
+//     }
+//   }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     login(dispatch,inputs);
-    if(failure===false){
-        navigate("/");
-    }
     // setProduct(dispatch,CartId)
     // dispatch(loginStart());
     // try {
@@ -93,9 +103,10 @@ const Login = () => {
                                 value={inputs.password || ""}
                                 onChange={handleChange}
                                 />
-                                {(failure)?<p style={{color:"red"}}>User or Password does not match</p>:<p>djkdf</p>}
+                                {(isError) && <p style={{color:"red"}}>User or Password does not match</p>}
                                 <label className="loginLabe2">Forgot password?</label>
                                 <button className="loginButton">Sign In</button>
+                                {(isSuc) && navigate("/")}
                         </div>
                         
                         </form>
