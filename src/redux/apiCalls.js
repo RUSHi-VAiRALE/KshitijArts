@@ -29,6 +29,18 @@ export const setProduct = async (dispatch,cartId) =>{
         }
 }
 
+export const deleteCart = async(dispatch,cartId)=>{
+    try {
+        await  axios
+        .delete("http://localhost:8000/userCart/deleteCartProd/"+cartId.cartid,{headers:{authorization: "Bearer "+cartId.accessToken}})
+        .then((res)=>{
+            console.log(res);
+        })
+        } catch (error) {
+            console.log(error)
+    }
+}
+
 export const incQty = async(cartID,index)=>{
     try {
         await axios

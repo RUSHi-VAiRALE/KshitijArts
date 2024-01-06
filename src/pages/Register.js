@@ -3,51 +3,8 @@ import styled from "styled-components";
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-
-const Container = styled.div`
-    width : 98.9vw;
-    height : 100vh;
-    background : linear-gradient(50deg,rgb(244, 238, 169)50%,rgb(240, 187, 98)50%);
-    display : flex;
-    align-items : center;
-    justify-content : center;
-`;
-
-const Wrapper = styled.div`
-background-color : white;
-width : 40%;
-padding : 10px 5px 10px 5px;
-border-radius : 12px;
-`;
-
-const Title = styled.h1`
-    font-size : 24px;
-    font-weight : 300;
-    margin-left : 3px;
-`
-
-const Form = styled.form `
-    display : flex;
-    flex-wrap : wrap;
-`
-
-const Input = styled.input`
-    flex : 1;
-    min-width : 40%;
-    margin : 10px 5px 30px 5px;
-    padding : 10px;
-`;
-const Button = styled.button`
-    width : 350px;
-    height : 40px;
-    background-color :rgb(6, 70, 53);
-    border : none;
-    border-radius : 12px;
-    color : white;
-    margin : auto;
-    font-size : 20px;
-`;
-
+import Heart from "../components/Vector.svg";
+import Close from "../components/Group 8.svg";
 
 const Register = () => {
     
@@ -70,33 +27,73 @@ const Register = () => {
     navigate("/");
   }
 
+  const handleClose1 = () =>{
+        navigate("/")
+  }
+
     return (
         <div>
-            <Container>
-                <Wrapper>
-                    <Title>Creat An Account</Title>
-                    <Form onSubmit={handleSubmit}> 
-                        <Input 
+            <div className="regiDiv">
+                    <div className="regiDiv1">
+                        <div style={{
+                            display:"flex",
+                            justifyContent:"center"
+                        }}>
+                            <img className="regiHeart" src={Heart}/>
+                        <p className="regiTitle">Hi, keep track of your favorites!</p>
+                        </div>
+                        <img className="regicloseImg" onClick={handleClose1} src={Close}/>
+                        <p className="regisignINtext">
+                            Please register.
+                        </p>
+                    </div>
+                    <div className="regiDiv2">
+                        <form className="regiForm" onSubmit={handleSubmit}> 
+                        <div className="regiInputCont">
+                            <div className="regidiv">
+                                <label for = "email" className="regiLable">Email</label>
+                            <input 
+                        id="email"
                         type="email" 
+                        className="regiInput"
                         placeholder="Email" 
                         name="email" 
                         value={inputs.email || ""} onChange={handleChange}/>
-                        <Input type="text" placeholder="First Name" name="fName" value={inputs
+                        </div>
+                                <div className="regidiv">
+                        <label className="regiLable">First Name</label>
+                        <input className="regiInput" type="text" placeholder="First Name" name="fName" value={inputs
                         .fName || ""} onChange={handleChange}/>
-                        <Input type="text" placeholder="Last Name" name="lName" value={inputs
+                        </div>
+                        <div className="regidiv">
+                            <label className="regiLable">Last Name</label>
+                        <input className="regiInput" type="text" placeholder="Last Name" name="lName" value={inputs
                         .lName || ""} onChange={handleChange}/>
-                        <Input type="number" placeholder="phone" name="phone" value={inputs
+                        </div>
+                        <div className="regidiv">
+                            <label className="regiLable">Phone</label>
+                        <input className="regiInput" type="number" placeholder="phone" name="phone" value={inputs
                         .phone || ""} onChange={handleChange}/>
-                        <Input type="text" placeholder="Username" name="userName" value={inputs
+                        </div>
+                        <div className="regidiv">
+                            <label className="regiLable">Username</label>
+                        <input className="regiInput" type="text" placeholder="Username" name="userName" value={inputs
                         .userName || ""} onChange={handleChange}/>
-                        <Input placeholder="Password" name="password" type="password" 
+                        </div>
+                        <div className="regidiv">
+                            <label className="regiLable">Password</label>
+                        <input className="regiInput" placeholder="Password" name="password" type="password" 
                             value={inputs
                             .password || ""} onChange={handleChange}
                         />
-                        <Button type="submit">Create Account</Button>
-                    </Form>
-                </Wrapper>
-            </Container>
+                        </div>
+                        <button className="regiButton" type="submit">Create Account</button>
+                        </div>
+                        
+                    </form>
+                                
+                    </div>
+            </div>
         </div>
     );
 

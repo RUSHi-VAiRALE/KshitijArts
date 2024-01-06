@@ -54,12 +54,9 @@ const Login = () => {
     
   }
 
-//   const handleClose = () =>{
-//         const p = document.getElementById("divd");
-//         p.style.visibility="hidden";
-//         // p.style.visibility="visible";
-//         // console.log(p.style.visibility);
-//   }
+  const handleClose = () =>{
+        navigate("/")
+  }
 
     return(
             <div>
@@ -72,13 +69,13 @@ const Login = () => {
                             <img className="loginHeart" src={Heart}/>
                         <p className="loginTitle">Hi, keep track of your favorites!</p>
                         </div>
-                        <img className="closeImg"  src={Close}/>
+                        <img className="closeImg" onClick={handleClose} src={Close}/>
                         <p className="signINtext">
                             Please sign in.
                         </p>
                     </div>
                     <div className="ldiv2">
-                        <form            className="loginForm" onSubmit={handleSubmit}>
+                        <form  className="loginForm" onSubmit={handleSubmit}>
                         <div className="inputCont">
                                     <label 
                                 for="username"
@@ -108,7 +105,9 @@ const Login = () => {
                                 <button className="loginButton">Sign In</button>
                                 {(isSuc) && navigate("/")}
                         </div>
-                        
+                        <span style={{alignItems:"center",color:"grey",marginTop:"5px",marginBottom:"5px"}}>Or Continue with</span>
+                                <button className="loginGoogle">Google</button>
+                                <label style={{alignItems:"center"}}><a href="/register">Create an Account &gt;</a></label>
                         </form>
                     </div>
                 </div>

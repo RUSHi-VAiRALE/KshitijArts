@@ -4,6 +4,7 @@ import axios from "axios";
 import { useSelector,useDispatch } from "react-redux";
 import CartCard from "./cartCard";
 import { setProduct } from "../redux/apiCalls";
+import {deleteCart} from "../redux/apiCalls";
 import { SubTotalProducts,SubTotalProductsreset } from "../redux/productPriceUpdate";
 import { useNavigate } from "react-router-dom";
 const Wrapper = styled.div``;
@@ -92,6 +93,8 @@ const Cartcomp = () => {
                 axios.post("http://localhost:8000/payment/verify/"+CartId.cartid,{response:response,proInfo})
                 .then(res=>{
                     console.log(res)
+                    deleteCart(dispatch,CartId);
+                    setProduct(dispatch,CartId);
                 })
                 .catch(err=>{
                     console.log(err)
@@ -128,7 +131,8 @@ const Cartcomp = () => {
     if (product.length==0) {
         return (
         <div style={{
-            top:"400px"
+            position:"absolute",
+            top:"200px"
         }}>
             <h1>YOUR CART IS EMPTY</h1>
         </div>

@@ -4,11 +4,12 @@ display: flex;
 flex-direction: column;
 justify-content: space-evenly;
 position : absolute;
-top : 18%;
-left: 40%;
+top : 12%;
+left: 35%;
 background-color : #ffff;
 width : 480px;
-height:480px;
+height:580px;
+border: solid gray 1px;
 }
 
 
@@ -19,7 +20,7 @@ height:480px;
 }
 
 .ldiv2{
-    height: 50%;
+    height: 400px;
 }
 
 .loginTitle
@@ -110,6 +111,20 @@ justify-content: space-around;
     font-weight: 700;
     line-height: 25px;
     background: #4D8900;
+    border: none;
+}
+
+.loginGoogle{
+    margin : auto;
+    width: 200px;
+    height: 46px;
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-family: Mulish;
+    font-weight: 700;
+    line-height: 25px;
+    background: #4688F1;;
     border: none;
 }
 

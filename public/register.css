@@ -1,0 +1,114 @@
+.regiDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    position: absolute;
+    top: 8%;
+    left: 26%;
+    background-color: #ffff;
+    width: 600px;
+    height: 560px;
+    border: solid gray 1px;
+}
+
+.regiDiv1 {
+    height: 20%;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.regiDiv2 {
+    height: 50%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.regiInput {
+
+    width: 252px;
+    height: 46px;
+    background: #F7F7F7;
+    margin-bottom: 20px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom-color: #4D8900;
+}
+
+.regiForm {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.regiTitle {
+    font-size: 24px;
+    font-family: Ovo;
+    line-height: 39px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.regisignINtext {
+    color: gray;
+    text-align: center;
+    /* Muli 14 Regular*/
+    margin-top: 20px;
+    font-size: 14px;
+    font-family: Mulish;
+    line-height: 21px
+}
+
+.regiHeart {
+    width: 19px;
+    height: 17px;
+    flex-shrink: 0;
+    display: inline-block;
+    margin-right: 4px;
+    margin-top: 22px;
+}
+
+.regiButton {
+    margin-top: 10px;
+    height: 46px;
+    width: 352px;
+    color: #FFF;
+    text-align: center;
+    font-size: 16px;
+    font-family: Mulish;
+    font-weight: 700;
+    line-height: 25px;
+    background: #4D8900;
+    border: none;
+}
+
+.regicloseImg {
+    color: grey;
+    width: 24.71px;
+    height: 24.71px;
+    flex-shrink: 0;
+    position: absolute;
+    top: 0px;
+    right: 2px
+}
+
+.regiInputCont{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.regiLable{
+    text-align: left;
+        display: block;
+        margin-bottom: 10px;
+}
+
+.regidiv{
+    display: flex;
+    flex-direction: column;
+}
