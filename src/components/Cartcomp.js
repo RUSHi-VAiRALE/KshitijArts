@@ -7,19 +7,7 @@ import { setProduct } from "../redux/apiCalls";
 import {deleteCart} from "../redux/apiCalls";
 import { SubTotalProducts,SubTotalProductsreset } from "../redux/productPriceUpdate";
 import { useNavigate } from "react-router-dom";
-const Wrapper = styled.div``;
-
-const Div = styled.div``
-
-const Img = styled.img``
-
-const Button = styled.button``
-
-const H2 = styled.h2``
-
-const P = styled.p``
-
-const H3 = styled.h3``
+import SuccessPopUp from "./SuccessPopup";
 
 
 let shipChar = 100;
@@ -72,6 +60,7 @@ const Cartcomp = () => {
 },[CartId.cartid]);
 
  const handleOpenRazorpay = (data) =>{
+        console.log("last")
         const options = {
             key : 'rzp_test_W1CfhGkA90XLGW',
             amount : data.amount,
@@ -105,25 +94,29 @@ const Cartcomp = () => {
         rzp.open();
     }
 
-    const handlePayment=(amount)=>{
+    const handlePayment=async(amount)=>{
         console.log("i got clicked in place order")
         console.log(amount)
         if (user!=="") {
             console.log("im in");
             const _data = {amount:amount}
         try {
-            axios.post("http://localhost:8000/payment/orders",_data)
+            await axios.post("http://localhost:8000/payment/orders",_data)
         .then(res=>{
             console.log(res.data)
             handleOpenRazorpay(res.data);
         })
         } catch (error) {
-            console.log(error)
+            console.log(error+"dkdkdk")
+            alert("Sorry we can't process your payment right now please try again after sometime");
+            navigate("/")
         }
         } else {
             alert("Please login first")
             navigate("/")
         }
+
+        return <SuccessPopUp/>
     }
 
 
