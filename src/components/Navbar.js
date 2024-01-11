@@ -1,24 +1,24 @@
 import React,{useState} from "react";
-import { Link, useNavigate } from "react-router-dom";
-import menuBar from "../icons/bars-solid.svg";
+import {useNavigate } from "react-router-dom";
 import cartComp from "../icons/cart-shopping-solid (2).svg"
 import userIcon from "../icons/user-solid.svg"
 import { useSelector,useDispatch } from "react-redux";
-import Logo from "./Ellipse 1 (3).png"
 import {logout} from "../redux/userLogin"
 import { logoutProducts } from "../redux/userCart";
-import Login from "./Login";
+import CartPop from "./cartPopUp"
+import Popup from "reactjs-popup";
 
 const Navbar = ({handleLoginClick}) => {
 
     const quantity = useSelector((state)=>state.cart.quantity);
     const user = useSelector((state)=>state.user.userName)
+    const [isPop , setPopUp] = useState(true)
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const handleItems = () =>{
         if(user!==""){
-            navigate("/cart");
+            setPopUp(isPop);
         }
 
         else{
@@ -52,6 +52,7 @@ const Navbar = ({handleLoginClick}) => {
     //     )
     //     }
     // }
+
 
     const checkConditionally=()=>{
         if(user!==""){
@@ -123,6 +124,7 @@ const Navbar = ({handleLoginClick}) => {
             </div>
         </div>
     </div>
+    {(isPop)&&<CartPop/>}
     </div>
     );
 }

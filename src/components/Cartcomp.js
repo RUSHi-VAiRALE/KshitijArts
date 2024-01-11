@@ -32,8 +32,8 @@ const createCart=(contact,index)=>{
 
 const Cartcomp = () => {
     // const [product,setProduct] = useState([]);
-    console.log("first")
     const ind=0;
+    const [isSuccessPayment, setPayment] = useState(false)
     const CartId = useSelector((state)=>state.user.currentUser)
     const product = useSelector((state)=>state.cart.products);
     // const subTot = useSelector((state)=>state.cart.subTotal);
@@ -84,6 +84,7 @@ const Cartcomp = () => {
                     console.log(res)
                     deleteCart(dispatch,CartId);
                     setProduct(dispatch,CartId);
+                    setPayment(true)
                 })
                 .catch(err=>{
                     console.log(err)
@@ -107,7 +108,7 @@ const Cartcomp = () => {
             handleOpenRazorpay(res.data);
         })
         } catch (error) {
-            console.log(error+"dkdkdk")
+            console.log(error)
             alert("Sorry we can't process your payment right now please try again after sometime");
             navigate("/")
         }
@@ -115,8 +116,6 @@ const Cartcomp = () => {
             alert("Please login first")
             navigate("/")
         }
-
-        return <SuccessPopUp/>
     }
 
 
@@ -127,6 +126,7 @@ const Cartcomp = () => {
             position:"absolute",
             top:"200px"
         }}>
+            {(isSuccessPayment)&&<SuccessPopUp/>}
             <h1>YOUR CART IS EMPTY</h1>
         </div>
 
