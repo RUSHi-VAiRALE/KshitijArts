@@ -6,19 +6,28 @@ import { useSelector,useDispatch } from "react-redux";
 import {logout} from "../redux/userLogin"
 import { logoutProducts } from "../redux/userCart";
 import CartPop from "./cartPopUp"
+import { setProduct } from "../redux/apiCalls";
 import Popup from "reactjs-popup";
 
 const Navbar = ({handleLoginClick}) => {
 
     const quantity = useSelector((state)=>state.cart.quantity);
     const user = useSelector((state)=>state.user.userName)
+    const cartId = useSelector((state)=>state.user.currentUser)
     const [isPop , setPopUp] = useState(true)
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const handleItems = () =>{
         if(user!==""){
-            setPopUp(isPop);
+            // const vis = document.getElementById("navCartDiv")
+            // if(vis.style.visibility === "hidden"){
+            //     vis.style.visibility = "visible"
+            // }
+            // else if(vis.style.visibility === "visible"){
+            //     vis.style.visibility = "hidden"
+            // }
+            navigate("/cart")
         }
 
         else{
@@ -124,7 +133,9 @@ const Navbar = ({handleLoginClick}) => {
             </div>
         </div>
     </div>
-    {(isPop)&&<CartPop/>}
+    {/* <div id="navCartDiv" style={{visibility:"hidden"}}>
+        <CartPop/>
+    </div> */}
     </div>
     );
 }

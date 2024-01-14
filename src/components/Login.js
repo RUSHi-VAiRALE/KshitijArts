@@ -75,7 +75,7 @@ const Login = () => {
                         </p>
                     </div>
                     <div className="ldiv2">
-                        <form  className="loginForm" onSubmit={handleSubmit}>
+                        <form  className="loginForm">
                         <div className="inputCont">
                                     <label 
                                 for="username"
@@ -84,7 +84,7 @@ const Login = () => {
                                 id="username"
                                 className="loginInput"
                                 type="text"
-                                placeholder="Username"
+                                placeholder="Username:luke"
                                 name="userName"
                                 value={inputs.userName || ""} 
                                 onChange={handleChange} />
@@ -96,13 +96,13 @@ const Login = () => {
                                 className="loginInput"
                                 type="password"
                                 name="password"
-                                placeholder="Password" 
+                                placeholder="Password:12345" 
                                 value={inputs.password || ""}
                                 onChange={handleChange}
                                 />
                                 {(isError) && <p style={{color:"red"}}>User or Password does not match</p>}
                                 <label className="loginLabe2">Forgot password?</label>
-                                <button className="loginButton">Sign In</button>
+                                <button  onClick={handleSubmit} className="loginButton">Sign In</button>
                                 {(isSuc) && navigate("/")}
                         </div>
                         <span style={{alignItems:"center",color:"grey",marginTop:"5px",marginBottom:"5px"}}>Or Continue with</span>

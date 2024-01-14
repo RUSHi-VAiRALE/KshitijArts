@@ -6,4 +6,6 @@
     right: 150px;
     top:70px;
     background: white;
+    display: flex;
+    flex-direction: column;
 }
