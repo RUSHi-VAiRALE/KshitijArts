@@ -63,7 +63,7 @@ const SingleProductComp =()=>{
                     pQuant : Number(currentState),
                     pPrice: (data.amount/100)
                 }
-                axios.post("http://localhost:8000/payment/verify/"+token.cartid,{response:response,proInfo})
+                axios.post("http://34.204.107.73:8000/payment/verify/"+token.cartid,{response:response,proInfo})
                 .then(res=>{
                     console.log(res)
                 })
@@ -83,7 +83,7 @@ const SingleProductComp =()=>{
             const _data = {amount:amount,
                             quantity:cuState}
         try {
-            axios.post("http://localhost:8000/payment/orders",_data)
+            axios.post("http://34.204.107.73:8000/payment/orders",_data)
         .then(res=>{
             console.log(res.data)
             handleOpenRazorpay(res.data);
@@ -102,7 +102,7 @@ useEffect(()=>{
     const GetProduct=async ()=>{
         try {
             axios
-        .get("http://localhost:8000/product/"+proId)
+        .get("http://34.204.107.73:8000/product/"+proId)
         .then((res)=>
             setObject(res.data)
         );
@@ -116,7 +116,7 @@ useEffect(()=>{
     const handleClick=()=>{
         if (userCheck!=="") {
             try {
-                axios.post("http://localhost:8000/userCart/updateCart/"+token.cartid,single,{headers:{authorization: "Bearer "+token.accessToken}})
+                axios.post("http://34.204.107.73:8000/userCart/updateCart/"+token.cartid,single,{headers:{authorization: "Bearer "+token.accessToken}})
             } catch (error) {
                 console.log(error)
             }

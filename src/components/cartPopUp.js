@@ -11,7 +11,7 @@ const CreateCart = (contact,index) =>{
   const handleClick = () =>{
     try {
             axios
-        .delete("http://localhost:8000/userCart/deleteCart/"+cartId.cartid+"/"+contact._id,{headers:{authorization: "Bearer "+cartId.accessToken}});
+        .delete("http://34.204.107.73:8000/userCart/deleteCart/"+cartId.cartid+"/"+contact._id,{headers:{authorization: "Bearer "+cartId.accessToken}});
         } catch (error) {
             console.log(error)
     }
