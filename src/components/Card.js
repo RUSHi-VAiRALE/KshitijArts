@@ -37,7 +37,7 @@ const Card=(props)=>{
                     pName : props.name,
                     pPrice: (data.amount/100)
                 }
-                axios.post("http://34.204.107.73:8000/payment/verify/"+cartId.cartid,{response:response,proInfo})
+                axios.post("http://localhost:8000/payment/verify/"+cartId.cartid,{response:response,proInfo})
                 .then(res=>{
                     console.log(res)
                 })
@@ -55,7 +55,7 @@ const Card=(props)=>{
             const _data = {amount:amount,
                             quantity:1}
         try {
-            axios.post("http://34.204.107.73:8000/payment/orders",_data)
+            axios.post("http://localhost:8000/payment/orders",_data)
         .then(res=>{
             handleOpenRazorpay(res.data);
         })

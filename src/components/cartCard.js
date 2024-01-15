@@ -64,7 +64,7 @@ const CartCard=(props)=>{
     const handleClick=()=>{
         try {
             axios
-        .delete("http://34.204.107.73:8000/userCart/deleteCart/"+cartId.cartid+"/"+props.ID,{headers:{authorization: "Bearer "+cartId.accessToken}});
+        .delete("http://localhost:8000/userCart/deleteCart/"+cartId.cartid+"/"+props.ID,{headers:{authorization: "Bearer "+cartId.accessToken}});
         } catch (error) {
             console.log(error)
     }
