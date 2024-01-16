@@ -1,11 +1,9 @@
 import React, { useState,useEffect } from "react";
-import styled from "styled-components";
 import axios from "axios";
 import { useSelector,useDispatch } from "react-redux";
 import CartCard from "./cartCard";
 import { setProduct } from "../redux/apiCalls";
 import {deleteCart} from "../redux/apiCalls";
-import { SubTotalProducts,SubTotalProductsreset } from "../redux/productPriceUpdate";
 import { useNavigate } from "react-router-dom";
 import SuccessPopUp from "./SuccessPopup";
 
