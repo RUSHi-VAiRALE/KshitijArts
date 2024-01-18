@@ -1,5 +1,5 @@
 import React from "react";
-import BackImage from "./heropottery.jpg"
+import BackImage from "./mockup-wall-with-plants-shelf.jpg"
 import IMG1 from "./handmade nature painting 8k.jpg"
 import IMG2 from "./pottery image with colour full background skin col.jpg"
 const BackImg=()=>{

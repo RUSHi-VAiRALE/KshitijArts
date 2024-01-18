@@ -9,9 +9,9 @@ import OverlapDiv from "../components/overlapDiv";
 
 const ProductsPage = () => {
     
-    return <div>
+    return <div className="relative bg-white w-full overflow-hidden flex flex-col items-center justify-center pt-0 px-0 pb-px box-border gap-[22px] tracking-[normal]">
             <Navbar />
-            <OverlapDiv />
+            {/* <OverlapDiv /> */}
             <Product />
             <Footer />
         </div>

@@ -1,10 +1,9 @@
 .imgCont{
         position: relative;
-        width: 90%;
+        width: 80%;
         max-width: 1277px;
         height: auto;
-        top: 26px;
-        margin: auto;
+        top: 0px;
     /* background-repeat: no-repeat;
     background-size:cover; */
 }
@@ -77,5 +76,38 @@
 .imgPottery:hover{
     width: 330px;
     height: 330px;
+}
+
+@media (max-width:320px){
+    .imgCont {
+            position: relative;
+            width: 90%;
+            height: auto;
+            top: 20px;
+            /* background-repeat: no-repeat;
+        background-size:cover; */
+        }
+}
+
+@media (max-width:1440px) {
+    .imgCont {
+        position: relative;
+        width: 85%;
+        height: auto;
+        top: 20px;
+        /* background-repeat: no-repeat;
+        background-size:cover; */
+    }
+}
+
+@media (max-width:1036px) {
+    .imgCont {
+        position: relative;
+        width: 94%;
+        height: auto;
+        top: 20px;
+        /* background-repeat: no-repeat;
+        background-size:cover; */
+    }
 }
 

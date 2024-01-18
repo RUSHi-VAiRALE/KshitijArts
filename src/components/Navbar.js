@@ -13,8 +13,8 @@ import Popup from "reactjs-popup";
 
 
 const navigation = [
-  { name: 'Home', href: '/products', current: true },
-  { name: 'Products', href: '#', current: false },
+  { name: 'Home', href: '/', current: true },
+  { name: 'Products', href: '/products', current: false },
   { name: 'About', href: '#', current: false },
   { name: 'Contact', href: '#', current: false },
 ]
@@ -23,7 +23,7 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-const Navbar = ({handleLoginClick}) => {
+const Navbar = () => {
 
     const quantity = useSelector((state)=>state.cart.quantity);
     const user = useSelector((state)=>state.user.userName)
@@ -80,12 +80,12 @@ const Navbar = ({handleLoginClick}) => {
     const checkConditionally=()=>{
         if(user!==""){
             return(
-                <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <Menu.Button className="relative flex rounded-full bg-transparent text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-10 w-10 rounded-full"
-                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                        src={userIcon}
                         alt=""
                       />
                 </Menu.Button>
@@ -142,7 +142,7 @@ const Navbar = ({handleLoginClick}) => {
                     src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                     alt="Your Company"
                   /> */}
-                  <h1 className="text-inherit text-2xl font-bold text-gray-900 tracking-[-0.05em] leading-[25px] text-[35px] text-black font-palanquin-dark font-normal font-inherit w-18 h-6 whitespace-nowrap">
+                  <h1 className="text-inherit text-2xl font-bold text-gray-900 tracking-[-0.05em] leading-[25px] text-[28px] text-black font-palanquin-dark font-normal font-inherit w-18 h-6 whitespace-nowrap">
               Kshitij.World
             </h1>
                 </div>
