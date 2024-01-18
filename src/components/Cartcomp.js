@@ -77,7 +77,7 @@ const Cartcomp = () => {
                 //     // pQuant : Number(currentState),
                 //     // pPrice: (data.amount/100)
                 // }
-                axios.post("http://localhost:8000/payment/verify/"+CartId.cartid,{response:response,proInfo})
+                axios.post("http://34.204.107.73:8000/payment/verify/"+CartId.cartid,{response:response,proInfo})
                 .then(res=>{
                     console.log(res)
                     deleteCart(dispatch,CartId);
@@ -100,7 +100,7 @@ const Cartcomp = () => {
             console.log("im in");
             const _data = {amount:amount}
         try {
-            await axios.post("http://localhost:8000/payment/orders",_data)
+            await axios.post("http://34.204.107.73:8000/payment/orders",_data)
         .then(res=>{
             console.log(res.data)
             handleOpenRazorpay(res.data);

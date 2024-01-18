@@ -55,7 +55,7 @@ const Card=(props)=>{
             const _data = {amount:amount,
                             quantity:1}
         try {
-            axios.post("http://localhost:8000/payment/orders",_data)
+            axios.post("http://34.204.107.73:8000/payment/orders",_data)
         .then(res=>{
             handleOpenRazorpay(res.data);
         })

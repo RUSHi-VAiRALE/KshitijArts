@@ -25,7 +25,7 @@ const ProductList = () => {
     
     useEffect(()=>{
         axios
-            .get("http://localhost:8000/product/allProducts")
+            .get("http://34.204.107.73:8000/product/allProducts")
             .then(res=>{
                 setArray(res.data)
     });

@@ -7,7 +7,7 @@ export const login= async (dispatch,user)=>{
     dispatch(loginStart());
     try {
         await axios
-        .post("http://localhost:8000/user/auth/login",user)
+        .post("http://34.204.107.73:8000/user/auth/login",user)
         .then((res)=>{
             dispatch(loginSuccess(res.data))
         })
@@ -20,7 +20,7 @@ export const login= async (dispatch,user)=>{
 export const setProduct = async (dispatch,cartId) =>{
     try {
         await   axios
-        .get("http://localhost:8000/userCart/allCart/"+cartId.cartid,{headers:{authorization: "Bearer "+cartId.accessToken}})
+        .get("http://34.204.107.73:8000/userCart/allCart/"+cartId.cartid,{headers:{authorization: "Bearer "+cartId.accessToken}})
         .then((res)=>
             dispatch(setProducts(res.data))
         );
@@ -32,7 +32,7 @@ export const setProduct = async (dispatch,cartId) =>{
 export const deleteCart = async(dispatch,cartId)=>{
     try {
         await  axios
-        .delete("http://localhost:8000/userCart/deleteCartProd/"+cartId.cartid,{headers:{authorization: "Bearer "+cartId.accessToken}})
+        .delete("http://34.204.107.73:8000/userCart/deleteCartProd/"+cartId.cartid,{headers:{authorization: "Bearer "+cartId.accessToken}})
         .then((res)=>{
             console.log(res);
         })
@@ -44,7 +44,7 @@ export const deleteCart = async(dispatch,cartId)=>{
 export const incQty = async(cartID,index)=>{
     try {
         await axios
-        .post("http://localhost:8000/userCart/incqty/"+cartID.cartid+"/"+index,{headers:{authorization: "Bearer "+cartID.accessToken}})
+        .post("http://34.204.107.73:8000/userCart/incqty/"+cartID.cartid+"/"+index,{headers:{authorization: "Bearer "+cartID.accessToken}})
         .then((res)=>
             console.log(res)
         );
@@ -56,7 +56,7 @@ export const incQty = async(cartID,index)=>{
 export const decQty = async(cartID,index) =>{
     try {
         axios
-        .post("http://localhost:8000/userCart/decqty/"+cartID.cartid+"/"+index,{headers:{authorization: "Bearer "+cartID.accessToken}})
+        .post("http://34.204.107.73:8000/userCart/decqty/"+cartID.cartid+"/"+index,{headers:{authorization: "Bearer "+cartID.accessToken}})
         .then((res)=>
             console.log(res)
         );

@@ -20,7 +20,7 @@ const Register = () => {
     event.preventDefault();
     try {
         const res = axios
-                        .post("http://localhost:8000/user/auth/register",inputs)
+                        .post("http://34.204.107.73:8000/user/auth/register",inputs)
     } catch (error) {
         console.log(error);
     } 
