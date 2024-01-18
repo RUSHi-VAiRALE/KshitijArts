@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-<<<<<<< HEAD
   content: ["./src/**/*.{js,jsx,ts,tsx}",],
   theme: {
     extend: {
@@ -34,15 +33,7 @@ module.exports = {
       mini: "15px",
       smi: "13px",
       inherit: "inherit",
-    }
-=======
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}"
-  ],
-  theme: {
-    extend: {},
->>>>>>> master
-  },
+    },
   plugins: [],
-}
+}}
 
