@@ -78,7 +78,7 @@
     height: 330px;
 }
 
-@media (max-width:320px){
+@media (min-width:0px){
     .imgCont {
             position: relative;
             width: 90%;
@@ -87,6 +87,68 @@
             /* background-repeat: no-repeat;
         background-size:cover; */
         }
+    .backImage{
+        position: absolute;
+        top:40px;
+        left: 140px;
+        right: 0px;
+    }
+    .backImageh1{
+        font-size: 20px;
+    }
+    .backImageSpan{
+        font-size: 10px;
+    }
+}
+
+@media (min-width:322px) {
+    .backImage {
+        position: absolute;
+        top: 50px;
+        left: 190px;
+    }
+
+    .backImageh1 {
+        font-size: 25px;
+    }
+
+    .backImageSpan {
+        font-size: 13px;
+    }
+}
+
+@media (min-width:427px) {
+    .backImage {
+        position: absolute;
+        top: 35%;
+        left: 49%;
+    }
+
+    .backImageh1 {
+        font-size: 45px;
+    }
+
+    .backImageSpan {
+        font-size: 23px;
+        padding-top: 16px;
+    }
+}
+
+@media (min-width:770px) {
+    .backImage {
+        position: absolute;
+        top: 35%;
+        left: 53%;
+    }
+
+    .backImageh1 {
+        font-size: 55px;
+    }
+
+    .backImageSpan {
+        font-size: 27px;
+        padding-top: 26px;
+    }
 }
 
 @media (max-width:1440px) {

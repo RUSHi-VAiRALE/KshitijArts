@@ -142,6 +142,12 @@ a{
     height: 200px;
 }
 
+@media (max-width:376px){
+    .cartBag{
+        visibility: hidden;
+    }
+}
+
 @media (max-width : 1047px) {
     .first {
         align-items: center;
