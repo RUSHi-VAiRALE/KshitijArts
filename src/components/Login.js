@@ -4,7 +4,7 @@ import { useState,useEffect } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {login} from "../redux/apiCalls";
 import Close from "../components/Group 8.svg"
 import Heart from "../components/Vector.svg"
@@ -107,7 +107,7 @@ const Login = () => {
                         </div>
                         <span style={{alignItems:"center",color:"grey",marginTop:"5px",marginBottom:"5px"}}>Or Continue with</span>
                                 <button className="loginGoogle">Google</button>
-                                <label style={{alignItems:"center"}}><a href="/register">Create an Account &gt;</a></label>
+                                <label style={{alignItems:"center"}}><Link to={"/register"}><a>Create an Account &gt;</a></Link></label>
                         </form>
                     </div>
                 </div>
