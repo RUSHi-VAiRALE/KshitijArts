@@ -13,7 +13,7 @@ import Popup from "reactjs-popup";
 
 
 const navigation = [
-  { name: 'Home', href: '/', current: true },
+  { name: 'Home', href: '/', current: false },
   { name: 'Products', href: '/products', current: false },
   { name: 'About', href: '#', current: false },
   { name: 'Contact', href: '#', current: false },
@@ -95,7 +95,9 @@ const Navbar = () => {
             return(
                 <div className="py-6">
                 <a
-                  href="/login"
+                  onClick={()=>{
+                    navigate('/login')
+                  }}
                   className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Log in <span aria-hidden="true">&rarr;</span>

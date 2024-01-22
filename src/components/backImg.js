@@ -7,7 +7,7 @@ const BackImg=()=>{
     <div className="imgCont">
         <img className="backImg" src={BackImage}/>
         <div className="backImage absolute">
-            <h1 className="backImageh1 text-[#50623A] font-bold text-gray-900 tracking-[-0.05em] leading-[25px] text-black font-palanquin-dark flex flex-col tracking-wide">
+            <h1 style={{color:"#50623A"}} className="backImageh1 font-bold text-gray-900 tracking-[-0.05em] leading-[25px] text-black font-palanquin-dark flex flex-col tracking-wide">
                 Kshitij.World
             <span className="backImageSpan font-ovo-18-regular tracking-wide text-black">Beyond The Horizon</span>
             </h1>
