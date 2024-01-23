@@ -32,6 +32,8 @@ const SingleProductComp =()=>{
     let proId=loc.pathname.split("/")[2];
     const [single,setObject] = useState({});
     const token = useSelector((state)=>state.user.currentUser);
+    const [onMouseOv, setOnMouseOv] = useState(false);
+    const [srcUrl , setSrcUrl] = useState("");
 
     const [currentState, setState] = useState(1)
 
@@ -128,25 +130,27 @@ useEffect(()=>{
     }
 
     const handleClick1=(e)=>{
-        let b =e.target.src
-        let c = e.target.id
-        let a = document.querySelectorAll("img.mainProduct")[0].src
-        document.querySelectorAll("img.mainProduct")[0].setAttribute("src",b);
-        document.getElementById(c).setAttribute("src",a)
+        setOnMouseOv(true);
+        setSrcUrl(e.target.src);
+    }
+
+    const handleClick2 = () =>{
+        setOnMouseOv(false);
+        setSrcUrl("");
     }
 return(
         <div>
             <Wrapper className="swrapper">
                 <Div className="main12Cont">
                     <Div className="main1">
-                        <Div className="sideImg"><Img id="1" className="sideImg1" onMouseEnter={handleClick1} onMouseOut={handleClick1}  src={single.img1URL} /></Div>
-                        <Div className="sideImg"><Img id="2" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg1" src={single.img2URL} /></Div>
-                        <Div className="sideImg"><Img id="3" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg1" src={single.img3URL} /></Div>
-                        <Div className="sideImg"><Img id="4" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg1" src={single.img4URL} /></Div>
-                        <Div className="sideImg"><Img id="5" onMouseEnter={handleClick1} onMouseOut={handleClick1} className="sideImg1" src={single.img5URL} /></Div>
+                        <Div className="sideImg"><Img id="1" className="sideImg1" onMouseOver={handleClick1} onMouseOut={handleClick2}  src={single.img1URL} /></Div>
+                        <Div className="sideImg"><Img id="2" onMouseOver={handleClick1} onMouseOut={handleClick2} className="sideImg1" src={single.img2URL} /></Div>
+                        <Div className="sideImg"><Img id="3" onMouseOver={handleClick1} onMouseOut={handleClick2} className="sideImg1" src={single.img3URL} /></Div>
+                        <Div className="sideImg"><Img id="4" onMouseOver={handleClick1} onMouseOut={handleClick2} className="sideImg1" src={single.img4URL} /></Div>
+                        <Div className="sideImg"><Img id="5" onMouseOver={handleClick1} onMouseOut={handleClick2} className="sideImg1" src={single.img5URL} /></Div>
                     </Div>
                     <Div className="main2">
-                                <Img className="mainProduct" src={single.imgURL} />
+                                <Img className="mainProduct" src={(onMouseOv)?srcUrl:single.imgURL} />
                     </Div>
                 </Div>
                 <Div className="main3">
