@@ -142,7 +142,7 @@ a{
     height: 200px;
 }
 
-@media (max-width:376px){
+@media (max-width:390px){
     .cartBag{
         visibility: hidden;
     }

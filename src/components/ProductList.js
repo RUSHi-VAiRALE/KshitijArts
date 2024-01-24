@@ -35,7 +35,7 @@ const ProductList = () => {
       <div className="mx-auto max-w-2xl px-4 py-5 sm:px-6 sm:py-5 lg:max-w-7xl lg:px-8">
         <h2 className="text-[28px] font-muli-14-regular font-bold tracking-tight text-gray-900">Products</h2>
 
-        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 xl:grid-cols-4">
           {inArray.map((product) => (
             <div key={product._id} className="group relative">
               <div className="aspect-h-3 aspect-w-3 w-full overflow-hidden bg-gray-200 lg:aspect-none group-hover:opacity-75 h-96">
@@ -53,7 +53,7 @@ const ProductList = () => {
                       <span aria-hidden="true" className="absolute inset-0" />
                       {product.name}
                     </a>
-                  </Link>
+                  </Link> 
                   </h3>
                 </div>
                 <p className="text-sm font-medium text-gray-900">{product.price}</p>
